@@ -495,6 +495,20 @@ fill: url(#half-star-gradient);
     border-color: #6366f1; 
 }
 
+/* Imagens e Background */
+.bg-cover { 
+    background-size: cover; 
+}
+.bg-center { 
+    background-position: center; 
+}
+.object-cover { 
+    object-fit: cover; 
+}
+.h-48 { 
+    height: 12rem; 
+}
+
 /* Media Queries (Responsividade) */
 @media (min-width: 640px) {
     .sm\:px-6 { 
