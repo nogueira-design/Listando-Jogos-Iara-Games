@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Estilos globais */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: f4f4f4;
+}
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+}
+section {
+    padding: 20px;
+}
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #333;
+    color: #fff;
+}
+/* Estilos globais usando a fonte Roboto */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-gray-200);
+}
+
+/* Variáveis CSS para consistência */
+:root {
+    --color-indigo-600: #4f46e5;
+    --color-indigo-700: #4338ca;
+    --color-indigo-900: #312e81;
+    --color-yellow-400: #facc15;
+    --color-gray-200: #e5e7eb;
+    --color-gray-300: #d1d5db;
+    --color-gray-400: #9ca3af;
+    --color-gray-700: #374151;
+    --color-gray-800: #1f2937;
+    --color-gray-900: #111827;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-red-400: #f87171;
+    --color-green-400: #4ade80;
+}
+
+/* Cores de Fundo */
+.bg-black { 
+    background-color: var(--color-black); 
+}
+.bg-white { 
+    background-color: var(--color-white); 
+}
+.bg-transparent { 
+    background-color: transparent; 
+}
+.bg-gray-700 { 
+    background-color: var(--color-gray-700); 
+}
+.bg-gray-800 { 
+    background-color: var(--color-gray-800); 
+}
+.bg-gray-900 { 
+    background-color: var(--color-gray-900); 
+}
+.bg-indigo-600 { 
+    background-color: var(--color-indigo-600); 
+}
+.bg-indigo-900 { 
+    background-color: var(--color-indigo-900); 
+}
+
+/* Cores de Texto */
+.text-white { 
+    color: var(--color-white); 
+}
+.text-yellow-400 { 
+    color: var(--color-yellow-400); 
+}
+.text-gray-200 { 
+    color: var(--color-gray-200); 
+}
+.text-gray-300 { 
+    color: var(--color-gray-300); 
+}
+.text-gray-400 { 
+    color: var(--color-gray-400); 
+}
+.text-indigo-200 { 
+    color: #c7d2fe; 
+}
+.text-indigo-400 { 
+    color: #818cf8; 
+}
+.text-red-400 { 
+    color: var(--color-red-400); 
+}
+.text-green-400 { 
+    color: var(--color-green-400); 
+}
