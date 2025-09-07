@@ -433,7 +433,7 @@ fill: url(#half-star-gradient);
 }
 
 /* Estilos de Hover e Focus */
-.hover\:bg-indigo-700:hover { 
+.hover\:indigo-700:hover { 
     background-color: var(--color-indigo-700); 
 }
 .hover\:bg-gray-700:hover { 
@@ -496,6 +496,10 @@ fill: url(#half-star-gradient);
 }
 
 /* Imagens e Background */
+.bg-opacity-60 { 
+    background-color: #00000099; 
+}
+
 .bg-cover { 
     background-size: cover; 
 }
@@ -510,6 +514,9 @@ fill: url(#half-star-gradient);
 }
 
 /* Posicionamento e Visibilidade */
+.h-full {
+    height: 100%;
+}
 .relative { 
     position: relative; 
 }
