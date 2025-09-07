@@ -509,6 +509,33 @@ fill: url(#half-star-gradient);
     height: 12rem; 
 }
 
+/* Posicionamento e Visibilidade */
+.relative { 
+    position: relative; 
+}
+.absolute { 
+    position: absolute; 
+}
+.inset-0 { 
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0; 
+}
+.hidden { 
+    display: none; 
+}
+.block { 
+    display: block; 
+}
+.overflow-hidden { 
+    overflow: hidden; 
+}
+.overflow-x-auto { 
+    overflow-x: auto; 
+}
+
+
 /* Media Queries (Responsividade) */
 @media (min-width: 640px) {
     .sm\:px-6 { 
