@@ -142,3 +142,80 @@ fill: currentColor;
 .game-card .star.half-filled {
 fill: url(#half-star-gradient);
 }
+
+/* Tipografia */
+.body-small { 
+    font-size: 0.89rem; /* 14px */
+    line-height: 1.65; /* 26px */
+    font-weight: 400; /* Regular */
+    letter-spacing: 0.03em;
+}
+.body { 
+    font-size: 1rem; /* 16px */
+    line-height: 1.6; /* 26px */
+    font-weight: 400; /* Regular */
+    letter-spacing: 0.03em;
+}
+.body-xlarge { 
+    font-size: 1.06rem; /* 20px */
+    line-height: 1.6; /* 26px */
+    font-weight: 400; /* Regular */
+    letter-spacing: 0.03em;
+}
+.heading-6 { 
+    font-size: 1.12rem; /* 25px */
+    line-height: 1.6; /* 28px */
+    font-weight: 500; /* Medium */
+    letter-spacing: 0.03em;
+}
+.heading-5 { 
+    font-size: 1.18rem; /* px */
+    line-height: 1.6; /* 28px */
+    font-weight: 500; /* Medium */
+    letter-spacing: 0.03em;
+}
+.heading-4 { 
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.6; /* 32px */
+    font-weight: 500; /* Medium */
+    letter-spacing: 0.025em;
+}
+.heading-3 { 
+    font-size: 1.4rem; /* 22px */
+    line-height: 1.6; /* 28px */
+    font-weight: 600; /* Semi-Bold */
+    letter-spacing: 0.025em;
+}
+.heading-2 { 
+    font-size: 1.56rem; /* 25px */
+    line-height: 1.55; /* 28px */
+    font-weight: 600; /* Semi-Bold */
+    letter-spacing: 0.02em;
+}
+.heading-1 { 
+    font-size: 1.95rem; /* 31px */
+    line-height: 1.55; /* 28px */
+    font-weight: 700; /* Bold */
+    letter-spacing: 0.02em;
+}
+.display-medium { 
+    font-size: 2.25rem; /* 36px */
+    line-height: 1.55; /* 40px */
+    font-weight: 800; /* Bold */
+    letter-spacing: 0.015em;
+}
+.display-large { 
+    font-size: 2.44rem; /* 48px */
+    line-height: 1.55; /* 52px */
+    font-weight: 800; /* Extra-Bold */
+    letter-spacing: 0.015em;
+}
+.text-center { 
+    text-align: center; 
+}
+.text-right { 
+    text-align: right; 
+}
+.whitespace-nowrap { 
+    white-space: nowrap; 
+}
