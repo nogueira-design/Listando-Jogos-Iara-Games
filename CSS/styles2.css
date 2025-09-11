@@ -14,6 +14,8 @@
     --color-black: #000000;
 }
 
+/* Tipografia */
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -40,7 +42,7 @@ img {
 
 /* ===== COMPONENTES REUTILIZÁVEIS ===== */
 .container {
-    max-width: 80rem; /* 1280px */
+    max-width: 66.667vw; /* 1280px */
     margin-left: auto;
     margin-right: auto;
     padding-left: 1rem;
@@ -348,66 +350,63 @@ img {
     color: var(--color-text-muted);
 }
 
-/* ===== FOOTER ===== */
-.main-footer {
+/* ===== FOOTER REATORADO ===== */
+.main-footer-refactored {
     background-color: var(--color-surface-2);
-    border-top: 1px solid var(--color-surface-1);
-}
-
-.main-footer .container {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 3rem 0;
+    border-top: 1px solid var(--color-surface-light);
+    color: var(--color-text-muted);
 }
 
 .footer-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2rem;
+    display: flex;
+    flex-wrap: wrap; /* Permite que as colunas quebrem para a linha de baixo em telas menores */
+    gap: 2rem; /* Espaçamento entre as colunas */
+    margin-bottom: 2rem;
 }
 
-.footer-column .footer-title {
-    font-size: 1.125rem; /* ~text-lg */
-    font-weight: 600;
+.footer-column {
+    flex: 1; /* Faz com que cada coluna tente ocupar o mesmo espaço */
+    min-width: 200px; /* Largura mínima antes de quebrar a linha */
+}
+
+/* Reutilizando a classe do CSS original, apenas garantindo a cor */
+.footer-title {
+    font-size: 1.125rem;
+    font-weight: 700;
     color: var(--color-white);
     margin-bottom: 1rem;
 }
 
-.footer-column .footer-title-brand {
-    color: var(--color-accent);
+.footer-text {
+    line-height: 1.6;
 }
 
-.footer-description {
-    font-size: 0.875rem;
-    color: var(--color-text-muted);
+.footer-links-list {
+    list-style: none; /* Remove os pontos da lista */
+    padding: 0;
+    margin: 0;
 }
 
-.footer-links {
-    list-style: none;
-    font-size: 0.875rem;
-}
-
-.footer-links li:not(:first-child) {
-    margin-top: 0.5rem;
-}
-
+/* Reutilizando e melhorando a classe do CSS original */
 .footer-link {
+    display: block;
+    margin-bottom: 0.5rem;
     color: var(--color-text-muted);
     transition: color 0.2s ease-in-out;
 }
+
 .footer-link:hover {
     color: var(--color-white);
 }
 
-.footer-bottom {
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--color-surface-1);
+.footer-copyright {
     text-align: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-surface-light);
     font-size: 0.875rem;
-    color: var(--color-text-muted);
 }
-
-
 /* ===== MEDIA QUERIES PARA RESPONSIVIDADE ===== */
 @media (min-width: 640px) { /* sm */
     .container {
@@ -439,10 +438,7 @@ img {
     }
     .features-grid {
         grid-template-columns: repeat(3, 1fr);
-    }
-    .footer-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
+    }    
 }
 
 @media (min-width: 1024px) { /* lg */
