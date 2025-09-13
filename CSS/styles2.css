@@ -12,6 +12,7 @@
     --color-surface-light: #374151; /* gray-700 */
     --color-white: #ffffff;
     --color-black: #000000;
+    font-size: 16px; /* Base font size */
 }
 
 *, *::before, *::after {
@@ -23,6 +24,7 @@
 body {
     font-family: 'Roboto', 'Inter', sans-serif;
     line-height: 1.6;
+    font-size: 1rem;
     background-color: var(--color-surface-2);
     color: var(--color-text-base);
 }
@@ -434,12 +436,13 @@ img {
 }
 .search-input {
     width: 100%;
-    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    padding: 0.625rem 1rem 0.625rem 2.5rem;
     background-color: var(--color-surface-1);
     color: var(--color-white);
     border: 1px solid transparent;
     border-radius: 0.5rem;
     transition: box-shadow 0.2s ease;
+    font-size: 1rem;
 }
 .search-input:focus {
     outline: none;
@@ -448,7 +451,7 @@ img {
 .search-icon {
     position: absolute;
     left: 0.75rem;
-    top: 50%;
+    top: 56%;
     transform: translateY(-50%);
     color: var(--color-text-muted);
 }
@@ -457,7 +460,7 @@ img {
     gap: 1rem;
 }
 .sort-select {
-    padding: 0.5rem 2.5rem 0.5rem 1rem;
+    padding: 0.625rem 2.5rem 0.625rem 1rem;
     background-color: var(--color-surface-1);
     color: var(--color-white);
     border: 1px solid transparent;
@@ -468,6 +471,7 @@ img {
     background-repeat: no-repeat;
     background-position: right 0.75rem center;
     background-size: 0.65em auto;
+    font-size: 0.875rem;
 }
 .sort-select:focus {
     outline: none;
@@ -579,6 +583,20 @@ img {
     font-weight: 600;
 }
 
+.sort-select {
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
+    background-color: var(--color-surface-1);
+    color: var(--color-white);
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    -webkit-appearance: none;
+    appearance: none;
+    /* ADICIONADO: SVG de Chevron para baixo, com cor correspondente ao texto muted */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%239ca3af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M6 9l4 4 4-4'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1.2em 1.2em; /* Ajuste no tamanho para melhor visualização */
+}
 
 /* ===== MEDIA QUERIES PARA RESPONSIVIDADE ===== */
 @media (min-width: 640px) { /* sm */
