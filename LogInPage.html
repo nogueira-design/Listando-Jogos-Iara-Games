@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja - Iara Games</title>
+    <title>Iara Games</title>
     <link rel="stylesheet" href="./CSS/styles2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,91 +44,37 @@
             </a>
         </div>
     </header>
-
+    
     <main>
-        <section class="section">
+        <section class="user-area-section">
             <div class="container">
-                <header class="store-header">
-                    <h1 class="store-title">Loja de Jogos</h1>
-                    <p class="store-subtitle">Descubra e compre incríveis jogos brasileiros.</p>
-                </header>
-
-                <div class="search-filters-container">
-                    <div class="search-filters">
-                        <div class="search-input-wrapper">
-                            <input type="text" id="searchInput" placeholder="Buscar jogos..." class="search-input" />
-                            <div class="search-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                            </div>
-                        </div>
-                        <div class="filter-controls">
-                            <select id="sortOption" class="sort-select">
-                                <option value="alphabetical">Ordem Alfabética</option>
-                                <option value="popular">Mais Populares</option>
-                                <option value="rating">Melhor Avaliados</option>
-                            </select>
-                            <button class="filter-button">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
-                                Filtros
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <nav id="categoryContainer" class="category-nav">
-                    <div class="category-list" id="categoryButtons">
-                        <button class="category-btn active">Todos</button>
-                        <button class="category-btn">Ação</button>
-                        <button class="category-btn">Aventura</button>
-                        <button class="category-btn">Estratégia</button>
-                        <button class="category-btn">RPG</button>
-                        <button class="category-btn">Plataforma</button>
-                        <button class="category-btn">Quebra-cabeça</button>
-                        <button class="category-btn">Corrida</button>
-                    </div>
-                </nav>
-
-                <div id="gamesGrid" class="games-grid">
-                    <div class="game-card">
-                        <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/612390/header.jpg" alt="Dandara" class="game-card-image">
-                        <div class="game-card-body">
-                            <h3 class="game-card-title">Dandara</h3>
-                            <p class="game-card-developer">Long Hat House</p>
-                            <div class="game-card-footer">
-                                <span class="game-card-price">R$ 36,99</span>
-                                <span class="game-card-rating">★ 4.5</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="game-card">
-                        <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/389140/header.jpg" alt="Horizon Chase Turbo" class="game-card-image">
-                        <div class="game-card-body">
-                            <h3 class="game-card-title">Horizon Chase Turbo</h3>
-                            <p class="game-card-developer">Aquiris Game Studio</p>
-                            <div class="game-card-footer">
-                                <span class="game-card-price">R$ 29,99</span>
-                                <span class="game-card-rating">★ 4.7</span>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
                 
-                <div id="noResults" class="no-results-message">
-                    <h2>Nenhum Jogo Encontrado</h2>
-                    <p>Tente ajustar sua busca ou filtros.</p>
+                <div class="user-form-container">
+                    <h2 class="form-title">Entrar na sua conta</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-input" placeholder="seu@email.com">
+                        </div>
+                        <div class="form-group-large">
+                            <label for="password" class="form-label">Senha</label>
+                            <input type="password" id="password" class="form-input" placeholder="********">
+                            <div class="form-helper-text">
+                                <a href="#" class="form-link">Esqueceu a senha?</a>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full-width">
+                            Entrar
+                        </button>
+                        <div class="form-footer-text">
+                            <p>
+                                Não tem uma conta?
+                                <a href="./criar-conta.html" class="form-link">Criar conta</a>
+                            </p>
+                        </div>
+                    </form>
                 </div>
 
-                <div class="pagination-container">
-                    <nav class="pagination">
-                        <button class="pagination-btn">Anterior</button>
-                        <button class="pagination-btn active">1</button>
-                        <button class="pagination-btn">2</button>
-                        <button class="pagination-btn">3</button>
-                        <span>...</span>
-                        <button class="pagination-btn">10</button>
-                        <button class="pagination-btn">Próximo</button>
-                    </nav>
-                </div>
             </div>
         </section>
     </main>
@@ -174,6 +120,5 @@
             </div>
         </div>
     </footer>
-    
 </body>
 </html>
