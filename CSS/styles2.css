@@ -456,7 +456,7 @@ img {
 }
 .search-input:focus {
     outline: none;
-    box-shadow: 0 0 0 2px var(--color-primary);
+    box-shadow: 0 0 0 2px #8B5CF6;
 }
 .search-icon {
     position: absolute;
@@ -536,7 +536,7 @@ img {
     color: var(--color-white);
 }
 .category-btn.active {
-    background-color: var(--color-primary);
+    background-color: #8B5CF6;
     color: var(--color-white);
 }
 
