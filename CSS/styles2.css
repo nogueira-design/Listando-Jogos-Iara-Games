@@ -109,9 +109,10 @@ img {
 }
 
 /* ===== HEADER / NAVEGAÇÃO ===== */
-.main-header {
-    background-color: var(--color-primary-darker);
-    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+.main-header {   
+    background-color: #28044B;
+    box-shadow: 0 2.56px 3.84px -2.56px rgba(0, 0, 0, 0.1),  /* Sombra 1 */
+                0 6.41px 9.61px -1.92px rgba(0, 0, 0, 0.1);  /* Sombra 2 */
     height: 4rem;
 }
 
@@ -129,15 +130,6 @@ img {
     font-weight: 700;
 }
 
-.logo-text-primary {
-    color: var(--color-accent);
-}
-
-.logo-text-secondary {
-    color: var(--color-white);
-    margin-left: 0.25rem;
-}
-
 .main-nav {
     display: none; /* Escondido em telas pequenas */
 }
@@ -151,8 +143,20 @@ img {
     font-weight: 500;
     color: var(--color-white);
 }
+
+.gradient-wrapper {
+  /* This is the gradient from your image */
+    background: linear-gradient(to bottom right, #020618, #3C0366, #020618);
+}
+
+.gradient-wrapper .featured-games,
+.gradient-wrapper .about-section,
+.gradient-wrapper .features-section {
+    background: transparent;
+}
+
 .nav-link:hover {
-    background-color: var(--color-primary-dark);
+    background-color: #AD46FF;
 }
 .nav-link svg {
     width: 1rem;
