@@ -131,6 +131,11 @@ img {
     font-weight: 700;
 }
 
+.logo-image {
+    height: 2.5rem; /* 40px - Ou qualquer altura que fique bem */
+    width: auto;    /* Mantém a proporção da imagem */
+}
+
 .main-nav {
     display: none; /* Escondido em telas pequenas */
 }
