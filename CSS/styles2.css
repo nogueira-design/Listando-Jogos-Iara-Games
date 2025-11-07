@@ -474,7 +474,7 @@ img {
 .sort-select {
     padding: 0.625rem 2.5rem 0.625rem 1rem; /* Padding consistente */
     background-color: #AD46FF33;
-    color: var(--color-white);
+    color: #DAB2FF;
     border: 1px solid transparent;
     border-radius: 0.5rem;
     -webkit-appearance: none;
@@ -494,7 +494,7 @@ img {
 .filter-button {
     padding: 0.5rem 1rem;
     background-color: #AD46FF33;
-    color: var(--color-white);
+    color: #DAB2FF;
     border-radius: 0.5rem;
     display: flex;
     align-items: center;
