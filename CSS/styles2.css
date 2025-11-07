@@ -520,13 +520,13 @@ img {
     padding-bottom: 0.5rem;
 }
 .category-btn {
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1rem;
     white-space: nowrap;
-    border-radius: 0.375rem;
+    border-radius: 2rem;
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--color-text-muted);
-    background-color: transparent;
+    background-color: #28044B;
     border: none;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -536,7 +536,7 @@ img {
     color: var(--color-white);
 }
 .category-btn.active {
-    background-color: #8B5CF6;
+    background-color: #AD46FF;
     color: var(--color-white);
 }
 
