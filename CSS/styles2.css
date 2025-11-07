@@ -447,7 +447,7 @@ img {
 .search-input {
     width: 100%;
     padding: 0.750rem 1rem 0.750rem 2.5rem;
-    background-color: var(--color-surface-1);
+    background-color: #AD46FF33;
     color: var(--color-white);
     border: 1px solid transparent;
     border-radius: 0.5rem;
@@ -461,7 +461,7 @@ img {
 .search-icon {
     position: absolute;
     left: 0.75rem;
-    top: 56%;
+    top: 50%;
     transform: translateY(-50%);
     color: var(--color-text-muted);
 }
@@ -473,7 +473,7 @@ img {
 /* Definição corrigida e unificada de .sort-select */
 .sort-select {
     padding: 0.625rem 2.5rem 0.625rem 1rem; /* Padding consistente */
-    background-color: var(--color-surface-1);
+    background-color: #AD46FF33;
     color: var(--color-white);
     border: 1px solid transparent;
     border-radius: 0.5rem;
@@ -493,7 +493,7 @@ img {
 
 .filter-button {
     padding: 0.5rem 1rem;
-    background-color: var(--color-surface-1);
+    background-color: #AD46FF33;
     color: var(--color-white);
     border-radius: 0.5rem;
     display: flex;
