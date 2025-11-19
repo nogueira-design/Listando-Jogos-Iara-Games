@@ -52,63 +52,107 @@
         </div>
     </header>
     
-    <main class="gradient-background min-vh-100 pb-5">
-        <div class="container pt-5">
+    <main class="gradient-background min-vh-100">
+        <div class="container py-5">
             
             <div class="row mb-4">
                 <div class="col-12">
-                    <h1 class="fw-bold text-white display-5">Loja</h1>
-                    <p class="text-secondary-light lead">Explore o catálogo completo de jogos incríveis.</p>
+                    <h1 class="display-5 fw-bold text-white">Loja</h1>
+                    <p class="lead text-secondary-light">Explore o catálogo completo de jogos incríveis.</p>
                 </div>
             </div>
 
-            <div class="row g-3 mb-5">
+            <div class="row g-3 align-items-center mb-5">
                 <div class="col-12 col-md-8">
-                    <div class="custom-search-wrapper">
-                        <i class="bi bi-search text-muted ms-3"></i>
-                        <input type="text" id="searchInput" class="form-control border-0 bg-transparent text-white shadow-none" placeholder="Buscar jogos...">
+                    <div class="custom-search-wrapper py-1 px-2">
+                        <span class="input-group-text bg-transparent border-0 text-secondary-light">
+                            <i class="bi bi-search"></i>
+                        </span>
+                        <input type="text" id="searchInput" class="form-control border-0 bg-transparent text-white shadow-none ps-0" placeholder="Buscar jogos...">
                     </div>
                 </div>
                 
-                <div class="col-12 col-md-4 d-flex gap-2">
-                    <select id="sortSelect" class="form-select custom-select-purple">
+                <div class="col-12 col-md-4 d-flex gap-2 justify-content-end">
+                    
+                    <div class="btn-group me-2" role="group" aria-label="Alterar visualização">
+                        <button id="gridViewBtn" class="btn btn-custom-filter active d-flex align-items-center" title="Visualização em Grade">
+                            <i class="bi bi-grid-3x3-gap-fill"></i>
+                        </button>
+                        <button id="listViewBtn" class="btn btn-custom-filter d-flex align-items-center" title="Visualização em Lista">
+                            <i class="bi bi-list-task"></i>
+                        </button>
+                    </div>
+
+                    <select id="sortSelect" class="form-select custom-select-purple flex-grow-1">
                         <option value="alphabetical" selected>Ordem Alfabética</option>
                         <option value="popular">Mais Comprados</option>
                         <option value="rating">Maior Avaliação</option>
                     </select>
-                    <button class="btn btn-purple-filter d-flex align-items-center gap-2">
-                        <i class="bi bi-sliders"></i> Filtros
+                    
+                    <button class="btn btn-custom-filter text-nowrap" type="button" data-bs-toggle="offcanvas" data-bs-target="#advancedFiltersOffcanvas">
+                        <i class="bi bi-sliders me-2"></i> Filtros
                     </button>
                 </div>
             </div>
 
-            <div class="d-flex gap-2 overflow-auto pb-3 mb-4 custom-scrollbar" id="categoryButtons">
-                <button class="btn btn-category rounded-pill active">Todos</button>
-                <button class="btn btn-category rounded-pill">Ação</button>
-                <button class="btn btn-category rounded-pill">Aventura</button>
-                <button class="btn btn-category rounded-pill">RPG</button>
+            <div class="d-flex justify-content-start mb-4">
+                <div class="d-flex gap-2 overflow-auto pb-3 custom-scrollbar" id="categoryButtons">
+                    </div>
             </div>
 
-            <div id="gamesGrid" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4">
+            <div id="gamesGrid" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 grid-view">
                 </div>
 
-            <nav class="mt-5 d-flex justify-content-center" id="pagination">
-                <ul class="pagination custom-pagination">
-                    <li class="page-item disabled"><span class="page-link">Anterior</span></li>
-                    <li class="page-item active"><span class="page-link">1</span></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Próximo</a></li>
-                </ul>
-            </nav>
-
             <div id="noResults" class="text-center py-5 d-none">
-                <h3 class="text-muted">Nenhum jogo encontrado</h3>
-                <p class="text-muted">Tente outra categoria ou termo de busca.</p>
+                <h2 class="text-muted">Nenhum jogo encontrado</h2>
+                <p class="text-muted">Tente ajustar sua busca ou filtros.</p>
             </div>
+
+            <nav aria-label="Navegação de páginas" id="pagination" class="mt-5" style="display: none; justify-content: center;">
+                <ul class="pagination justify-content-center custom-pagination">
+                    </ul>
+            </nav>
             
         </div>
     </main>
+
+    <div class="offcanvas offcanvas-end bg-darker" tabindex="-1" id="advancedFiltersOffcanvas" aria-labelledby="offcanvasLabel" data-bs-theme="dark">
+        <div class="offcanvas-header main-header">
+            <h5 class="offcanvas-title text-white fw-bold" id="offcanvasLabel">Filtros Avançados</h5>
+            <button type="button" class="btn-close text-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            
+            <h6 class="text-secondary-light fw-bold mb-3">Preço</h6>
+            <div class="px-2">
+                <input type="range" class="form-range" id="priceRange" min="0" max="200" step="1" value="200">
+                <div class="d-flex justify-content-between small text-secondary-light">
+                    <span>R$ 0</span>
+                    <span id="priceRangeValue">R$ 200+</span>
+                </div>
+            </div>
+
+            <hr class="border-secondary border-opacity-25 my-4">
+
+            <h6 class="text-secondary-light fw-bold mb-3">Desenvolvedor</h6>
+            <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" value="Long Hat House" id="dev1">
+                <label class="form-check-label" for="dev1">Long Hat House</label>
+            </div>
+            <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" value="Aquiris Game Studio" id="dev2">
+                <label class="form-check-label" for="dev2">Aquiris Game Studio</label>
+            </div>
+            <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" value="Behold Studios" id="dev3">
+                <label class="form-check-label" for="dev3">Behold Studios</label>
+            </div>
+            
+            <div class="d-grid mt-5">
+                <button class="btn btn-primary-custom rounded-pill">Aplicar Filtros</button>
+            </div>
+        </div>
+    </div>
 
     <footer class="main-footer py-5">
         <div class="container">
