@@ -3,156 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja de Jogos</title>
+    <title>Loja - Iara Games</title>
     
-    <!-- CSS Customizado -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
     <link rel="stylesheet" href="./CSS/styles.css">
-
 </head>
+<body data-bs-theme="dark">
 
-<!-- O body agora é estilizado diretamente pelo style.css -->
-<body>
-
-    <!-- ===== HEADER INSERIDO ===== -->
-    <header class="main-header">
-        <div class="container">
-            <a href="./index.html" class="logo">
-                <img src="./imagens/Logo Full.svg" alt="Iara Games Logo" class="logo-image">
+    <header class="main-header sticky-top">
+        <div class="container h-100 d-flex justify-content-between align-items-center">
+            <a href="./index.html" class="logo-link">
+                <img src="./imagens/Logo Full.svg" alt="Iara Games Logo" class="logo-img">
             </a>
-            <nav class="main-nav">
-                <a href="./index.html" class="nav-link">
+
+            <nav class="d-none d-md-flex gap-3 align-items-center">
+                <a href="./index.html" class="nav-link-custom">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                     Início
                 </a>
-                <a href="./loja.html" class="nav-link">
+                <a href="./loja.html" class="nav-link-custom active">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
                     Loja
                 </a>
-                <a href="./biblioteca.html" class="nav-link">
+                <a href="./biblioteca.html" class="nav-link-custom">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
                     Biblioteca
                 </a>
-                <a href="./forum.html" class="nav-link">
+                <a href="./forum.html" class="nav-link-custom">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                     Fórum
                 </a>
-                <a href="./suporte.html" class="nav-link">
+                <a href="./suporte.html" class="nav-link-custom">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                     Suporte
                 </a>
             </nav>
-            <a href="./minha-conta.html" class="nav-link account-link">
+
+            <a href="./minha-conta.html" class="nav-link-custom d-none d-md-flex account-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                 Minha Conta
             </a>
+
+            <button class="btn btn-link text-white d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                <i class="bi bi-list fs-1"></i>
+            </button>
         </div>
     </header>
     
-    <!-- Conteúdo principal da página da Loja -->
-    <main class="gradient-wrapper">
-        <div class="container section">
-        <div class="store-header">
-            <h1 class="store-title">Loja</h1>
-            <p class="store-subtitle">Explore o catálogo completo de jogos incríveis.</p>
-        </div>
-
-        <!-- Filtros e Busca -->
-        <div class="search-filters-container">
-            <div class="search-filters">
-                <div class="search-input-wrapper">
-                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                    </svg>
-                    <input type="text" id="searchInput" class="search-input" placeholder="Buscar jogos...">
+    <main class="gradient-background min-vh-100 pb-5">
+        <div class="container pt-5">
+            
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h1 class="fw-bold text-white display-5">Loja</h1>
+                    <p class="text-secondary-light lead">Explore o catálogo completo de jogos incríveis.</p>
                 </div>
-                <div class="filter-controls">
-                    <select id="sortSelect" class="sort-select">
+            </div>
+
+            <div class="row g-3 mb-5">
+                <div class="col-12 col-md-8">
+                    <div class="custom-search-wrapper">
+                        <i class="bi bi-search text-muted ms-3"></i>
+                        <input type="text" id="searchInput" class="form-control border-0 bg-transparent text-white shadow-none" placeholder="Buscar jogos...">
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-4 d-flex gap-2">
+                    <select id="sortSelect" class="form-select custom-select-purple">
                         <option value="alphabetical" selected>Ordem Alfabética</option>
                         <option value="popular">Mais Comprados</option>
                         <option value="rating">Maior Avaliação</option>
                     </select>
-                    <button class="filter-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right: 0.5rem;">
-                            <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
-                        </svg>
-                        Filtros
+                    <button class="btn btn-purple-filter d-flex align-items-center gap-2">
+                        <i class="bi bi-sliders"></i> Filtros
                     </button>
                 </div>
             </div>
-        </div>
 
-        <!-- Categorias -->
-        <div class="category-nav">
-            <div id="categoryButtons" class="category-list">
-                <!-- Botões de categoria serão inseridos aqui pelo JS -->
+            <div class="d-flex gap-2 overflow-auto pb-3 mb-4 custom-scrollbar" id="categoryButtons">
+                <button class="btn btn-category rounded-pill active">Todos</button>
+                <button class="btn btn-category rounded-pill">Ação</button>
+                <button class="btn btn-category rounded-pill">Aventura</button>
+                <button class="btn btn-category rounded-pill">RPG</button>
             </div>
-        </div>
 
-        <!-- Grid de Jogos -->
-        <div id="gamesGrid" class="games-grid">
-            <!-- Cards de jogos serão inseridos aqui pelo JS -->
-        </div>
+            <div id="gamesGrid" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4">
+                </div>
 
-        <!-- Paginação -->
-        <div id="pagination" class="pagination-container">
-            <div class="pagination">
-                <button class="pagination-btn" disabled>Anterior</button>
-                <button class="pagination-btn active">1</button>
-                <button class="pagination-btn">2</button>
-                <button class="pagination-btn">3</button>
-                <span style="padding: 0 0.5rem; align-self: center;">...</span>
-                <button class="pagination-btn">10</button>
-                <button class="pagination-btn">Próximo</button>
+            <nav class="mt-5 d-flex justify-content-center" id="pagination">
+                <ul class="pagination custom-pagination">
+                    <li class="page-item disabled"><span class="page-link">Anterior</span></li>
+                    <li class="page-item active"><span class="page-link">1</span></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Próximo</a></li>
+                </ul>
+            </nav>
+
+            <div id="noResults" class="text-center py-5 d-none">
+                <h3 class="text-muted">Nenhum jogo encontrado</h3>
+                <p class="text-muted">Tente outra categoria ou termo de busca.</p>
             </div>
-        </div>
+            
         </div>
     </main>
-    <footer class="main-footer-refactored">
+
+    <footer class="main-footer py-5">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                <a href="./index.html" class="logo">
-                        <img src="./imagens/Logo Full.svg" alt="Iara Games Logo" class="logo-image">
-                    </a>
-                    <p class="footer-text">Plataforma dedicada exclusivamente a jogos desenvolvidos por estúdios brasileiros.</p>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-3 text-warning">IARA GAMES</h5>
+                    <p class="text-secondary-light small">Plataforma dedicada exclusivamente a jogos desenvolvidos por estúdios brasileiros. Apoie o talento nacional.</p>
                 </div>
-
-                <div class="footer-column">
-                    <h3 class="footer-title">Links Rápidos</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="./index2.html" class="footer-link">Início</a></li>
-                        <li><a href="./loja.html" class="footer-link">Loja</a></li>
-                        <li><a href="./biblioteca.html" class="footer-link">Biblioteca</a></li>
-                        <li><a href="./forum.html" class="footer-link">Fórum</a></li>
-                        <li><a href="./suporte.html" class="footer-link">Suporte</a></li>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold text-white mb-3">Links Rápidos</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="./index.html" class="footer-link">Início</a></li>
+                        <li class="mb-2"><a href="./loja.html" class="footer-link">Loja</a></li>
+                        <li class="mb-2"><a href="./biblioteca.html" class="footer-link">Biblioteca</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-column">
-                    <h3 class="footer-title">Suporte</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="./suporte.html" class="footer-link">FAQ</a></li>
-                        <li><a href="./suporte.html" class="footer-link">Contato</a></li>
-                        <li><a href="./suporte.html" class="footer-link">Tickets de Suporte</a></li>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-bold text-white mb-3">Suporte</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#" class="footer-link">FAQ</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Contato</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-column">
-                    <h3 class="footer-title">Legal</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="#" class="footer-link">Termos de Uso</a></li>
-                        <li><a href="#" class="footer-link">Política de Privacidade</a></li>
+                <div class="col-lg-3 col-md-6">
+                     <h6 class="fw-bold text-white mb-3">Legal</h6>
+                     <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#" class="footer-link">Privacidade</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Termos de Uso</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-copyright">
-                <p>&copy; 2025 Iara Games. Todos os direitos reservados.</p>
+            <div class="row mt-4 pt-3 border-top border-secondary border-opacity-25">
+                <div class="col-12 text-center text-secondary-light small">
+                    &copy; 2025 Iara Games. Todos os direitos reservados.
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Nosso JavaScript customizado da Loja -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/loja.js" defer></script>
 </body>
 </html>
-
