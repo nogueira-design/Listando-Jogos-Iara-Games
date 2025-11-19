@@ -1,30 +1,59 @@
-/* ===== VARIÁVEIS GERAIS ===== */
+/* ========================================= */
+/* ===== 1. VARIÁVEIS E RESET GLOBAL ===== */
+/* ========================================= */
 :root {
+    /* Paleta de Cores */
     --color-bg-dark: #020618;
-    --color-header: #28044B;
-    --color-purple-light: #AD46FF;
-    --color-purple-bg-transparent: rgba(173, 70, 255, 0.2); /* #AD46FF com opacidade */
-    --color-text-muted: #9ca3af;
+    --color-header: #28044B;       /* Roxo cabeçalho */
+    --color-purple-light: #AD46FF; /* Roxo Neon (Acentos) */
+    --color-purple-dark: #7c3aed;  /* Roxo Hover */
+    --color-accent: #facc15;       /* Amarelo/Dourado */
+    
+    /* Transparências e Fundos */
+    --color-purple-bg-transparent: rgba(173, 70, 255, 0.2);
+    --color-surface-card: #111827; /* Cinza quase preto */
+    --color-surface-hover: #1f2937;
+    
+    /* Textos */
     --color-text-white: #ffffff;
+    --color-text-muted: #9ca3af;
+    
+    /* Bordas */
+    --border-transparent: rgba(255, 255, 255, 0.1);
 }
 
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--color-bg-dark);
     color: var(--color-text-white);
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Fundo com Gradiente */
+/* Utilitários de Fundo e Texto */
 .gradient-background {
     background: linear-gradient(to bottom right, #020618, #3C0366, #020618);
 }
 
-/* Texto secundário mais claro */
+.bg-darker {
+    background-color: #0b0f19; /* Mais escuro que o gradiente para contraste */
+}
+
 .text-secondary-light {
     color: var(--color-text-muted) !important;
 }
 
-/* ===== HEADER E ÍCONES SVG ===== */
+.text-purple-light {
+    color: var(--color-purple-light) !important;
+}
+
+.section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+/* ========================================= */
+/* ===== 2. HEADER E NAVEGAÇÃO ===== */
+/* ========================================= */
 .main-header {
     background-color: var(--color-header);
     height: 4rem;
@@ -37,7 +66,7 @@ body {
     width: auto;
 }
 
-/* Links do Menu */
+/* Links do Menu (Desktop) */
 .nav-link-custom {
     display: flex;
     align-items: center;
@@ -55,6 +84,7 @@ body {
     width: 18px;
     height: 18px;
     margin-right: 8px; /* Espaço entre ícone e texto */
+    stroke-width: 2;
 }
 
 .nav-link-custom:hover,
@@ -63,24 +93,148 @@ body {
     color: white;
 }
 
-/* Botão Minha Conta específico */
+/* Botão Minha Conta (borda sutil) */
 .account-btn {
     border: 1px solid rgba(255,255,255,0.2);
 }
 
-/* ===== BARRA DE PESQUISA UNIFICADA ===== */
-/* Aqui está o segredo para corrigir a barra quebrada */
+/* ========================================= */
+/* ===== 3. HERO SECTIONS (Landing Page) ===== */
+/* ========================================= */
+
+/* --- Hero Clássico (Primeira dobra) --- */
+.hero-section-classic {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    /* Imagem de fundo vinda do HTML, mas configurada aqui para garantir cover */
+    min-height: 80vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -4rem; /* Puxa para trás do header */
+    padding-top: 4rem;
+}
+
+/* Camada escura sobre a imagem */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), var(--color-bg-dark));
+    z-index: 1;
+}
+
+/* Conteúdo do Hero deve ficar acima do overlay */
+.hero-section-classic .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Hero Secundário / Destaque (Segunda dobra) --- */
+/* Imagem flutuante do jogo em destaque */
+.hero-image-float {
+    animation: float 6s ease-in-out infinite;
+    border: 1px solid rgba(173, 70, 255, 0.3);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Badge "Destaque da Semana" */
+.bg-purple-light {
+    background-color: var(--color-purple-bg-transparent);
+    color: #DAB2FF;
+    border: 1px solid var(--color-purple-light);
+    padding: 0.5em 1em;
+    border-radius: 50rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+/* ========================================= */
+/* ===== 4. COMPONENTES UI (Botões, Cards) ===== */
+/* ========================================= */
+
+/* Botão Primário (Roxo) */
+.btn-primary-custom {
+    background-color: var(--color-purple-light);
+    border: 1px solid var(--color-purple-light);
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+    background-color: var(--color-purple-dark);
+    border-color: var(--color-purple-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+    color: white;
+}
+
+/* Botão Outline (Borda Branca/Cinza) */
+.btn-outline-light:hover {
+    background-color: white;
+    color: var(--color-bg-dark);
+}
+
+/* Cards de Jogos (Genérico) */
+.card {
+    background-color: var(--color-surface-card);
+    border: none; /* Remove borda padrão do Bootstrap */
+    border-radius: 0.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+/* Cards de Vantagens (Features) */
+.feature-card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-transparent);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    transform: translateY(-5px);
+    border-color: var(--color-purple-light);
+}
+
+/* Círculo do Ícone nas Vantagens */
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--color-purple-bg-transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-purple-light);
+}
+
+/* ========================================= */
+/* ===== 5. PÁGINA DA LOJA (Filtros e Busca) ===== */
+/* ========================================= */
+
+/* Barra de Pesquisa Unificada */
 .custom-search-wrapper {
     background-color: var(--color-purple-bg-transparent);
     border-radius: 0.5rem;
     border: 1px solid transparent;
     display: flex;
     align-items: center;
-    padding: 0.25rem 0.5rem;
+    padding: 0.4rem 0.8rem; /* Espaçamento interno */
     transition: all 0.2s ease;
 }
 
-/* Quando clica no input, a borda do wrapper acende */
+/* Efeito de foco no wrapper inteiro */
 .custom-search-wrapper:focus-within {
     border-color: var(--color-purple-light);
     box-shadow: 0 0 0 0.25rem rgba(173, 70, 255, 0.25);
@@ -90,58 +244,57 @@ body {
     color: rgba(255, 255, 255, 0.5);
 }
 
-/* ===== FILTROS E SELECT ===== */
+/* Select de Filtros e Botão de Filtros */
 .custom-select-purple,
 .btn-purple-filter {
     background-color: var(--color-purple-bg-transparent) !important;
-    color: #DAB2FF !important; /* Lilás claro */
+    color: #DAB2FF !important;
     border: 1px solid transparent;
     border-radius: 0.5rem;
-    height: 100%; /* Para alinhar com a busca */
+    height: 100%; /* Alinha altura com a busca */
     padding-top: 0.6rem;
     padding-bottom: 0.6rem;
 }
 
 .custom-select-purple:focus,
 .btn-purple-filter:hover {
-    background-color: #374151 !important;
+    background-color: var(--color-surface-hover) !important;
     color: white !important;
     border-color: var(--color-purple-light);
     box-shadow: none;
 }
 
-/* Ícone Chevron do Select */
+/* Ícone Chevron do Select (Recolorido para Lilás) */
 .custom-select-purple {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23DAB2FF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
     background-position: right 0.75rem center;
     background-size: 16px 12px;
 }
 
-/* ===== BOTÕES DE CATEGORIA (Pílulas) ===== */
+/* Botões de Categoria (Pílulas) */
 .btn-category {
-    background-color: var(--color-header); /* Roxo bem escuro */
+    background-color: var(--color-header); /* Fundo escuro */
     color: var(--color-text-muted);
     border: 1px solid var(--color-header);
     font-weight: 500;
     padding: 0.5rem 1.25rem;
-    white-space: nowrap; /* Impede texto quebrar */
+    white-space: nowrap;
     transition: all 0.2s;
 }
 
 .btn-category:hover {
-    background-color: #374151;
-    border-color: #374151;
+    background-color: var(--color-surface-hover);
+    border-color: var(--color-surface-hover);
     color: white;
 }
 
-/* Botão ativo (selecionado) */
 .btn-category.active {
     background-color: var(--color-purple-light) !important;
     border-color: var(--color-purple-light) !important;
     color: white !important;
 }
 
-/* Scrollbar personalizada para categorias */
+/* Scrollbar personalizada (para categorias overflow) */
 .custom-scrollbar::-webkit-scrollbar {
     height: 6px;
 }
@@ -154,25 +307,10 @@ body {
     border-radius: 3px;
 }
 
-/* ===== CARDS DE JOGO ===== */
-.card {
-    background-color: #111827; /* Cinza muito escuro */
-    border: none;
-    border-radius: 0.5rem;
-    transition: transform 0.2s;
-}
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-}
-.card-body {
-    color: white;
-}
-
-/* ===== PAGINAÇÃO ===== */
+/* Paginação */
 .custom-pagination .page-link {
-    background-color: #1f2937;
-    border-color: #111827;
+    background-color: var(--color-surface-hover);
+    border-color: var(--color-surface-card);
     color: var(--color-text-muted);
     margin: 0 3px;
     border-radius: 4px;
@@ -187,16 +325,41 @@ body {
     color: white;
 }
 
-/* ===== FOOTER ===== */
+/* ========================================= */
+/* ===== 6. FOOTER ===== */
+/* ========================================= */
 .main-footer {
-    background-color: #111827;
-    border-top: 1px solid #374151;
+    background-color: var(--color-surface-card);
+    border-top: 1px solid var(--color-surface-hover);
 }
+
 .footer-link {
     color: var(--color-text-muted);
     text-decoration: none;
     transition: color 0.2s;
 }
+
 .footer-link:hover {
     color: white;
 }
+
+/* ========================================= */
+/* ===== 7. ANIMAÇÕES E JS HELPERS ===== */
+/* ========================================= */
+
+/* Classes para o Scroll Reveal (Intersection Observer) */
+.hidden-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.show-element {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delays para animações em cascata */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }

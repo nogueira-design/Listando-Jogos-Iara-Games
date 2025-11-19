@@ -3,212 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iara Games</title>
+    <title>Iara Games - O Melhor dos Jogos Brasileiros</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
     <link rel="stylesheet" href="./CSS/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header class="main-header">
-        <div class="container">
-            <a href="./index.html" class="logo">
-                <img src="./imagens/Logo Full.svg" alt="Iara Games Logo" class="logo-image">
+<body data-bs-theme="dark">
+
+    <header class="main-header sticky-top">
+        <div class="container h-100 d-flex justify-content-between align-items-center">
+            <a href="./index.html" class="logo-link">
+                <img src="./imagens/Logo Full.svg" alt="Iara Games Logo" class="logo-img">
             </a>
-            <nav class="main-nav">
-                <a href="./index.html" class="nav-link">
+
+            <nav class="d-none d-md-flex gap-3 align-items-center">
+                <a href="./index.html" class="nav-link-custom active">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                     Início
                 </a>
-                <a href="./loja.html" class="nav-link">
+                <a href="./loja.html" class="nav-link-custom">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
                     Loja
                 </a>
-                <a href="./biblioteca.html" class="nav-link">
+                <a href="./biblioteca.html" class="nav-link-custom">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
                     Biblioteca
                 </a>
-                <a href="./forum.html" class="nav-link">
+                <a href="./forum.html" class="nav-link-custom">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                     Fórum
                 </a>
-                <a href="./suporte.html" class="nav-link">
+                <a href="./suporte.html" class="nav-link-custom">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                     Suporte
                 </a>
             </nav>
-            <a href="./minha-conta.html" class="nav-link account-link">
+
+            <a href="./minha-conta.html" class="nav-link-custom d-none d-md-flex account-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                 Minha Conta
             </a>
+
+            <button class="btn btn-link text-white d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                <i class="bi bi-list fs-1"></i>
+            </button>
         </div>
     </header>
 
     <main>
-        <!--Seção Hero-->
-        <section class="hero-section" style="background-image: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=2071');">
+        <section class="hero-section-classic" style="background-image: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=2071');">
             <div class="hero-overlay"></div>
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">Descubra o Melhor dos <span>Games Brasileiros</span></h1>
-                    <p class="hero-subtitle">Iara Games é a plataforma dedicada exclusivamente a jogos desenvolvidos por estúdios brasileiros. Apoie o talento nacional e mergulhe em experiências únicas.</p>
-                    <div class="hero-actions">
-                        <a href="./loja.html" class="btn btn-primary">Explorar Jogos</a>
-                        <a href="./criar-conta.html" class="btn btn-outline">Criar Conta</a>
+            <div class="container position-relative z-2 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h1 class="display-3 fw-bold text-white mb-3">
+                            Descubra o Melhor dos <span style="color: var(--color-accent);">Games Brasileiros</span>
+                        </h1>
+                        <p class="lead text-white opacity-75 mb-5">
+                            Iara Games é a plataforma dedicada exclusivamente a jogos desenvolvidos por estúdios brasileiros. Apoie o talento nacional e mergulhe em experiências únicas.
+                        </p>
+                        <div class="d-flex gap-3 justify-content-center">
+                            <a href="./loja.html" class="btn btn-primary-custom btn-lg px-5 rounded-pill">Explorar Jogos</a>
+                            <a href="./minha-conta.html" class="btn btn-outline-light btn-lg px-5 rounded-pill">Criar Conta</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!--Jogos em Destaque-->
-        <div class="gradient-wrapper">
-            <div class="section featured-games">
-                <div class="container">
-                    <div class="section-header">
-                    <h2 class="section-title">Jogos em Destaque</h2>
-                    <a href="./loja.html" class="link">
-                        Ver todos
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+
+        <section class="section-padding bg-darker hidden-element">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <span class="badge bg-purple-light mb-3">Destaque da Semana</span>
+                        <h2 class="display-4 fw-bold text-white mb-4">
+                            O Melhor dos <span style="color: var(--color-purple-light);">Jogos Brasileiros</span>
+                        </h2>
+                        <p class="lead text-secondary-light mb-5">
+                            Descubra, jogue e apoie desenvolvedores independentes do Brasil. Uma biblioteca única de aventuras feitas por quem entende a nossa cultura.
+                        </p>
+                        <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+                            <a href="./loja.html" class="btn btn-primary-custom px-4 rounded-pill">
+                                Comprar Agora
+                            </a>
+                            <a href="./biblioteca.html" class="btn btn-outline-secondary px-4 rounded-pill text-white">
+                                Ver Detalhes
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-5 mt-lg-0 d-none d-lg-block">
+                        <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/612390/header.jpg" alt="Dandara Gameplay" class="img-fluid rounded-4 shadow-lg hero-image-float border border-secondary border-opacity-25">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding gradient-background">
+            <div class="container">
+                <div class="text-center mb-5 hidden-element">
+                    <h2 class="fw-bold text-white">Por que a Iara Games?</h2>
+                    <p class="text-secondary-light">Feito de jogadores para jogadores.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4 hidden-element delay-1">
+                        <div class="feature-card p-4 h-100 text-center rounded-4">
+                            <div class="icon-circle mb-3 mx-auto">
+                                <i class="bi bi-controller fs-2 text-white"></i>
+                            </div>
+                            <h4 class="text-white fw-bold">Curadoria Nacional</h4>
+                            <p class="text-secondary-light">Seleção dos melhores títulos indie produzidos em solo brasileiro.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 hidden-element delay-2">
+                        <div class="feature-card p-4 h-100 text-center rounded-4">
+                            <div class="icon-circle mb-3 mx-auto">
+                                <i class="bi bi-people fs-2 text-white"></i>
+                            </div>
+                            <h4 class="text-white fw-bold">Comunidade Ativa</h4>
+                            <p class="text-secondary-light">Fóruns, avaliações e suporte direto com os desenvolvedores.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 hidden-element delay-3">
+                        <div class="feature-card p-4 h-100 text-center rounded-4">
+                            <div class="icon-circle mb-3 mx-auto">
+                                <i class="bi bi-shield-check fs-2 text-white"></i>
+                            </div>
+                            <h4 class="text-white fw-bold">Compra Segura</h4>
+                            <p class="text-secondary-light">Plataforma segura e transparente, com apoio real aos criadores.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding bg-darker">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-end mb-4 hidden-element">
+                    <div>
+                        <h2 class="fw-bold text-white">Em Alta</h2>
+                        <p class="text-secondary-light mb-0">Os favoritos da comunidade nesta semana.</p>
+                    </div>
+                    <a href="./loja.html" class="text-decoration-none text-purple-light fw-bold">
+                        Ver todos <i class="bi bi-arrow-right"></i>
                     </a>
-                    </div>
-                    <div class="games-grid">
-                    <div class="game-card">
-                        <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/612390/header.jpg" alt="Dandara" class="game-card-image">
-                        <div class="game-card-body">
-                            <h3 class="game-card-title">Dandara</h3>
-                            <p class="game-card-developer">Long Hat House</p>
-                            <div class="game-card-footer">
-                                <span class="game-card-price">R$ 36,99</span>
-                                <span class="game-card-rating">★ 4.5</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="game-card">
-                        <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/389140/header.jpg" alt="Horizon Chase Turbo" class="game-card-image">
-                        <div class="game-card-body">
-                            <h3 class="game-card-title">Horizon Chase Turbo</h3>
-                            <p class="game-card-developer">Aquiris Game Studio</p>
-                            <div class="game-card-footer">
-                                <span class="game-card-price">R$ 29,99</span>
-                                <span class="game-card-rating">★ 4.7</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="game-card">
-                        <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/504230/header.jpg" alt="Celeste" class="game-card-image">
-                        <div class="game-card-body">
-                            <h3 class="game-card-title">Celeste</h3>
-                            <p class="game-card-developer">Matt Makes Games</p>
-                            <div class="game-card-footer">
-                                <span class="game-card-price">R$ 36,99</span>
-                                <span class="game-card-rating">★ 4.9</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="game-card">
-                        <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/231740/header.jpg" alt="Knights of Pen & Paper" class="game-card-image">
-                        <div class="game-card-body">
-                            <h3 class="game-card-title">Knights of Pen & Paper</h3>
-                            <p class="game-card-developer">Behold Studios</p>
-                            <div class="game-card-footer">
-                                <span class="game-card-price">R$ 9,99</span>
-                                <span class="game-card-rating">★ 4.3</span>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
                 </div>
-            </div>
-        <!--Sobre a Iara Games-->
-        <section class="section about-section">
-            <div class="container">
-                <div class="about-grid">
-                    <div class="about-content">
-                        <h2 class="section-title">Sobre a Iara Games</h2>
-                        <p class="about-text">A Iara Games nasceu da paixão por jogos e do desejo de dar visibilidade às pequenas desenvolvedoras de jogos brasileiras. Nossa missão é criar um espaço dedicado exclusively às produções nacionais, conectando desenvolvedores talentosos com jogadores apaixonados.</p>
-                        <p class="about-text">Acreditamos no potencial criativo do Brasil e queremos fomentar a indústria nacional de games, proporcionando visibilidade e oportunidades para criadores brasileiros.</p>
-                        <a href="./sobre.html" class="link">
-                            Saiba mais sobre nossa história
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-                        </a>
-                    </div>
-                    <div class="about-image-container">
-                        <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=2070" alt="Equipe de desenvolvimento de jogos" class="about-image">
-                    </div>
+
+                <div id="featuredGamesGrid" class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 hidden-element">
+                    <div class="col-12 text-center text-muted">Carregando destaques...</div>
                 </div>
             </div>
         </section>
-        <!--Por que escolher a Iara Games?-->
-        <section class="section features-section">
+        
+        <section class="py-5 text-center hidden-element">
             <div class="container">
-                <h2 class="section-title">Por que escolher a Iara Games?</h2>
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <div class="feature-icon-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
-                        </div>
-                        <h3 class="feature-title">100% Brasileiro</h3>
-                        <p class="feature-description">Plataforma dedicada exclusivamente a jogos desenvolvidos por estúdios brasileiros, valorizando e promovendo o talento nacional.</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                        </div>
-                        <h3 class="feature-title">Comunidade Ativa</h3>
-                        <p class="feature-description">Fórum dedicado para discussões, compartilhamento de dicas e conexão direta com desenvolvedores brasileiros.</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                        </div>
-                        <h3 class="feature-title">Suporte Dedicado</h3>
-                        <p class="feature-description">Suporte ao cliente em português e sistema de tickets para acompanhar suas solicitações de forma organizada.</p>
-                    </div>
+                <div class="p-5 rounded-4 gradient-background border border-secondary border-opacity-25">
+                    <h2 class="fw-bold text-white mb-3">Pronto para jogar?</h2>
+                    <p class="text-secondary-light mb-4">Crie sua conta gratuitamente e comece sua coleção hoje mesmo.</p>
+                    <a href="./minha-conta.html" class="btn btn-primary-custom px-4 py-2 rounded-pill">Criar Conta Grátis</a>
                 </div>
             </div>
         </section>
-        </div>
     </main>
 
-    <footer class="main-footer-refactored">
+    <footer class="main-footer py-5">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h3 class="footer-title" style="color: var(--color-accent);">IARA GAMES</h3>
-                    <p class="footer-text">Plataforma dedicada exclusivamente a jogos desenvolvidos por estúdios brasileiros. Apoie o talento nacional e mergulhe em experiências únicas.</p>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-3 text-warning">IARA GAMES</h5>
+                    <p class="text-secondary-light small">Plataforma dedicada exclusivamente a jogos desenvolvidos por estúdios brasileiros. Apoie o talento nacional.</p>
                 </div>
-
-                <div class="footer-column">
-                    <h3 class="footer-title">Links Rápidos</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="./index2.html" class="footer-link">Início</a></li>
-                        <li><a href="./loja.html" class="footer-link">Loja</a></li>
-                        <li><a href="./biblioteca.html" class="footer-link">Biblioteca</a></li>
-                        <li><a href="./forum.html" class="footer-link">Fórum</a></li>
-                        <li><a href="./suporte.html" class="footer-link">Suporte</a></li>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold text-white mb-3">Links Rápidos</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="./index.html" class="footer-link">Início</a></li>
+                        <li class="mb-2"><a href="./loja.html" class="footer-link">Loja</a></li>
+                        <li class="mb-2"><a href="./biblioteca.html" class="footer-link">Biblioteca</a></li>
+                        <li class="mb-2"><a href="./forum.html" class="footer-link">Fórum</a></li>
+                        <li class="mb-2"><a href="./suporte.html" class="footer-link">Suporte</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-column">
-                    <h3 class="footer-title">Suporte</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="./suporte.html" class="footer-link">FAQ</a></li>
-                        <li><a href="./suporte.html" class="footer-link">Contato</a></li>
-                        <li><a href="./suporte.html" class="footer-link">Tickets de Suporte</a></li>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-bold text-white mb-3">Suporte</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#" class="footer-link">FAQ</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Contato</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Tickets de Suporte</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-column">
-                    <h3 class="footer-title">Legal</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="#" class="footer-link">Termos de Uso</a></li>
-                        <li><a href="#" class="footer-link">Política de Privacidade</a></li>
+                <div class="col-lg-3 col-md-6">
+                     <h6 class="fw-bold text-white mb-3">Legal</h6>
+                     <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#" class="footer-link">Termos de Uso</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Privacidade</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-copyright">
-                <p>&copy; 2025 Iara Games. Todos os direitos reservados.</p>
+            <div class="row mt-4 pt-3 border-top border-secondary border-opacity-25">
+                <div class="col-12 text-center text-secondary-light small">
+                    &copy; 2025 Iara Games. Todos os direitos reservados.
+                </div>
             </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/home.js"></script>
 </body>
 </html>
