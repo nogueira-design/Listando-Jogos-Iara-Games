@@ -1,74 +1,150 @@
-document.addEventListener('DOMContentLoaded', function() {
-            // Referências aos elementos principais da UI
-            const loggedOutView = document.getElementById('loggedOutView');
-            const loggedInView = document.getElementById('loggedInView');
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- ELEMENTOS DO DOM ---
+    const loggedOutView = document.getElementById('loggedOutView');
+    const loggedInView = document.getElementById('loggedInView');
+    
+    const loginContainer = document.getElementById('loginFormContainer');
+    const registerContainer = document.getElementById('registerFormContainer');
+    
+    // Botões de Ação
+    const btnLogin = document.getElementById('loginButton');
+    const btnRegister = document.getElementById('registerButton');
+    const btnLogout = document.getElementById('logoutButton');
+    
+    // Toggles (Inputs Radio que controlam o Slider)
+    const radioLogin = document.getElementById('loginTabButton');
+    const radioRegister = document.getElementById('registerTabButton');
+    
+    // --- FUNÇÕES DE ESTADO ---
+
+    /**
+     * Alterna entre exibir o formulário de Login ou Registro
+     * @param {string} type - 'login' ou 'register'
+     */
+    function toggleAuthForm(type) {
+        if (type === 'login') {
+            loginContainer.style.display = 'block';
+            registerContainer.style.display = 'none';
+            radioLogin.checked = true;
+        } else {
+            loginContainer.style.display = 'none';
+            registerContainer.style.display = 'block';
+            radioRegister.checked = true;
+        }
+    }
+
+    /**
+     * Verifica o estado de autenticação e atualiza a view
+     */
+    function checkAuthState() {
+        // Simulação de autenticação via localStorage
+        const isLoggedIn = localStorage.getItem('iara_user_logged_in') === 'true';
+        
+        if (isLoggedIn) {
+            loggedOutView.style.display = 'none';
+            loggedInView.style.display = 'block';
+            // Adicione a classe de animação se necessário
+            loggedInView.classList.add('fade-in'); 
+        } else {
+            loggedInView.style.display = 'none';
+            // Usa 'flex' para manter a centralização do Bootstrap
+            loggedOutView.style.display = 'flex'; 
+        }
+    }
+
+    /**
+     * Simula o Login
+     */
+    function performLogin() {
+        const email = document.getElementById('loginEmail').value;
+        const pass = document.getElementById('loginPassword').value;
+
+        if (email && pass) {
+            localStorage.setItem('iara_user_logged_in', 'true');
+            checkAuthState();
+        } else {
+            alert('Por favor, preencha o e-mail e senha para testar o login.');
+        }
+    }
+
+    /**
+     * Simula o Registro
+     */
+    function performRegister() {
+        const user = document.getElementById('regUsername').value;
+        const email = document.getElementById('regEmail').value;
+        const pass = document.getElementById('regPassword').value;
+
+        if (user && email && pass) {
+            alert('Conta criada com sucesso! Você será logado automaticamente.');
+            localStorage.setItem('iara_user_logged_in', 'true');
+            checkAuthState();
+        } else {
+            alert('Preencha todos os campos do cadastro.');
+        }
+    }
+
+    /**
+     * Realiza o Logout
+     */
+    function performLogout() {
+        if(confirm('Tem certeza que deseja sair?')) {
+            localStorage.removeItem('iara_user_logged_in');
+            // Reseta para a aba de login e atualiza a view
+            toggleAuthForm('login'); 
+            checkAuthState();
+        }
+    }
+
+    // --- EVENT LISTENERS ---
+
+    // 1. Troca Visual (Controle do Slider e Formulários)
+    if (radioLogin && radioRegister) {
+        radioLogin.addEventListener('change', () => toggleAuthForm('login'));
+        radioRegister.addEventListener('change', () => toggleAuthForm('register'));
+    }
+
+    // 2. Ação dos Botões Principais
+    if (btnLogin) {
+        btnLogin.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            performLogin();
+        });
+    }
+
+    if (btnRegister) {
+        btnRegister.addEventListener('click', (e) => {
+            e.preventDefault();
+            performRegister();
+        });
+    }
+
+    if (btnLogout) {
+        btnLogout.addEventListener('click', (e) => {
+            e.preventDefault();
+            performLogout();
+        });
+    }
+
+    // 3. Feedback dos Botões de "Salvar" no Dashboard
+    const settingsButtons = document.querySelectorAll('#loggedInView button.btn-primary-custom');
+    settingsButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const originalText = this.innerText;
+            this.innerText = 'Salvo! ✓';
+            this.classList.remove('btn-primary-custom');
+            this.classList.add('btn-success');
             
-            // Elementos da visão Logged Out
-            const loginTabButton = document.getElementById('loginTabButton');
-            const registerTabButton = document.getElementById('registerTabButton');
-            const loginFormContainer = document.getElementById('loginFormContainer');
-            const registerFormContainer = document.getElementById('registerFormContainer');
-            const loginButton = document.getElementById('loginButton');
-            const registerButton = document.getElementById('registerButton');
-            const showRegisterLink = document.getElementById('showRegisterLink');
-            const showLoginLink = document.getElementById('showLoginLink');
+            setTimeout(() => {
+                this.innerText = originalText;
+                this.classList.add('btn-primary-custom');
+                this.classList.remove('btn-success');
+            }, 2000);
+        });
+    });
 
-            // Elementos da visão Logged In
-            const logoutButton = document.getElementById('logoutButton');
-            const defaultAccountTab = document.getElementById('privacy-tab');
-            const defaultAccountPane = document.getElementById('privacy');
-            const allAccountTabs = document.querySelectorAll('#account-tab .nav-link');
-            const allAccountPanes = document.querySelectorAll('#account-tabContent .tab-pane');
-
-            // --- Funções de Visibilidade ---
-
-            function showLogin() {
-                loginFormContainer.style.display = 'block';
-                registerFormContainer.style.display = 'none';
-                loginTabButton.checked = true;
-            }
-
-            function showRegister() {
-                loginFormContainer.style.display = 'none';
-                registerFormContainer.style.display = 'block';
-                registerTabButton.checked = true;
-            }
-
-            function showLoggedInView() {
-                loggedInView.style.display = 'block';
-                loggedOutView.style.display = 'none';
-                
-                // Reseta para a aba de privacidade ao logar
-                allAccountTabs.forEach(tab => tab.classList.remove('active'));
-                allAccountPanes.forEach(pane => pane.classList.remove('show', 'active'));
-                defaultAccountTab.classList.add('active');
-                defaultAccountPane.classList.add('show', 'active');
-            }
-
-            function showLoggedOutView() {
-                loggedInView.style.display = 'none';
-                loggedOutView.style.display = 'block';
-                showLogin(); // Mostra o login por padrão ao deslogar
-            }
-
-            // --- Event Listeners ---
-
-            // Alternar abas Login/Registro
-            loginTabButton.addEventListener('change', showLogin);
-            registerTabButton.addEventListener('change', showRegister);
-
-            // Links "Criar conta" e "Entrar"
-            showRegisterLink.addEventListener('click', showRegister);
-            showLoginLink.addEventListener('click', showLogin);
-
-            // Botões de Login e Registro (simulação)
-            loginButton.addEventListener('click', showLoggedInView);
-            registerButton.addEventListener('click', showLoggedInView);
-
-            // Botão de Logout
-            logoutButton.addEventListener('click', showLoggedOutView);
-
-            // --- Estado Inicial ---
-            // Inicia na tela de "Logged Out"
-            showLoggedOutView();
+    // --- INICIALIZAÇÃO ---
+    checkAuthState();
 });

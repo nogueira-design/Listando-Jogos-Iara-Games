@@ -7,7 +7,7 @@
     --color-header: #28044B;       /* Roxo cabeçalho */
     --color-purple-light: #AD46FF; /* Roxo Neon (Acentos) */
     --color-purple-dark: #7c3aed;  /* Roxo Hover */
-    --color-accent: #facc15;       /* Amarelo/Dourado */
+    --color-accent: #facc15;       /* Amarelo/Dourado (Logo/Destaques) */
     
     /* Transparências e Fundos */
     --color-purple-bg-transparent: rgba(173, 70, 255, 0.2);
@@ -29,23 +29,19 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Utilitários de Fundo e Texto */
+/* Utilitários */
 .gradient-background {
     background: linear-gradient(to bottom right, #020618, #3C0366, #020618);
 }
-
 .bg-darker {
-    background-color: #0b0f19; /* Mais escuro que o gradiente para contraste */
+    background-color: #0b0f19;
 }
-
 .text-secondary-light {
     color: var(--color-text-muted) !important;
 }
-
 .text-purple-light {
     color: var(--color-purple-light) !important;
 }
-
 .section-padding {
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -60,13 +56,7 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     z-index: 1000;
 }
-
-.logo-img {
-    height: 40px;
-    width: auto;
-}
-
-/* Links do Menu (Desktop) */
+.logo-img { height: 40px; width: auto; }
 .nav-link-custom {
     display: flex;
     align-items: center;
@@ -78,72 +68,43 @@ body {
     font-size: 0.9rem;
     transition: all 0.2s ease;
 }
-
-/* Estilização dos SVGs dentro dos links */
-.nav-link-custom svg {
-    width: 18px;
-    height: 18px;
-    margin-right: 8px; /* Espaço entre ícone e texto */
-    stroke-width: 2;
-}
-
+.nav-link-custom svg { width: 18px; height: 18px; margin-right: 8px; stroke-width: 2; }
 .nav-link-custom:hover,
 .nav-link-custom.active {
     background-color: var(--color-purple-light);
     color: white;
 }
-
-/* Botão Minha Conta (borda sutil) */
-.account-btn {
-    border: 1px solid rgba(255,255,255,0.2);
-}
+.account-btn { border: 1px solid rgba(255,255,255,0.2); }
 
 /* ========================================= */
-/* ===== 3. HERO SECTIONS (Landing Page) ===== */
+/* ===== 3. HERO SECTION (Landing Page) ===== */
 /* ========================================= */
-
-/* --- Hero Clássico (Primeira dobra) --- */
 .hero-section-classic {
     position: relative;
     background-size: cover;
     background-position: center;
-    /* Imagem de fundo vinda do HTML, mas configurada aqui para garantir cover */
     min-height: 80vh; 
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -4rem; /* Puxa para trás do header */
+    margin-top: -4rem; 
     padding-top: 4rem;
 }
-
-/* Camada escura sobre a imagem */
 .hero-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom, rgba(0,0,0,0.4), var(--color-bg-dark));
     z-index: 1;
 }
-
-/* Conteúdo do Hero deve ficar acima do overlay */
-.hero-section-classic .container {
-    position: relative;
-    z-index: 2;
-}
-
-/* --- Hero Secundário / Destaque (Segunda dobra) --- */
-/* Imagem flutuante do jogo em destaque */
 .hero-image-float {
     animation: float 6s ease-in-out infinite;
     border: 1px solid rgba(173, 70, 255, 0.3);
 }
-
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-15px); }
     100% { transform: translateY(0px); }
 }
-
-/* Badge "Destaque da Semana" */
 .bg-purple-light {
     background-color: var(--color-purple-bg-transparent);
     color: #DAB2FF;
@@ -155,7 +116,7 @@ body {
 }
 
 /* ========================================= */
-/* ===== 4. COMPONENTES UI (Botões, Cards) ===== */
+/* ===== 4. ESTILOS DE COMPONENTES E OVERRIDES ===== */
 /* ========================================= */
 
 /* Botão Primário (Roxo) */
@@ -166,7 +127,6 @@ body {
     font-weight: 600;
     transition: all 0.3s ease;
 }
-
 .btn-primary-custom:hover {
     background-color: var(--color-purple-dark);
     border-color: var(--color-purple-dark);
@@ -174,40 +134,36 @@ body {
     box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
     color: white;
 }
-
-/* Botão Outline (Borda Branca/Cinza) */
 .btn-outline-light:hover {
     background-color: white;
     color: var(--color-bg-dark);
 }
 
-/* Cards de Jogos (Genérico) */
+/* Cards (Genérico) */
 .card {
     background-color: var(--color-surface-card);
-    border: none; /* Remove borda padrão do Bootstrap */
+    border: none;
     border-radius: 0.5rem;
     transition: transform 0.2s, box-shadow 0.2s;
 }
-
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 }
 
-/* Cards de Vantagens (Features) */
+/* Cards de Vantagens */
 .feature-card {
     background-color: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-transparent);
     transition: all 0.3s ease;
 }
-
 .feature-card:hover {
     background-color: rgba(255, 255, 255, 0.08);
     transform: translateY(-5px);
     border-color: var(--color-purple-light);
 }
 
-/* Círculo do Ícone nas Vantagens */
+/* Círculo do Ícone */
 .icon-circle {
     width: 80px;
     height: 80px;
@@ -220,7 +176,7 @@ body {
 }
 
 /* ========================================= */
-/* ===== 5. PÁGINA DA LOJA (Filtros e Busca) ===== */
+/* ===== 5. ESTILOS DA LOJA (Busca/Filtros) ===== */
 /* ========================================= */
 
 /* Barra de Pesquisa Unificada */
@@ -230,50 +186,37 @@ body {
     border: 1px solid transparent;
     display: flex;
     align-items: center;
-    padding: 0.4rem 0.8rem; /* Espaçamento interno */
+    padding: 0.4rem 0.8rem;
     transition: all 0.2s ease;
 }
-
-/* Efeito de foco no wrapper inteiro */
 .custom-search-wrapper:focus-within {
     border-color: var(--color-purple-light);
     box-shadow: 0 0 0 0.25rem rgba(173, 70, 255, 0.25);
 }
-
 .custom-search-wrapper input::placeholder {
     color: rgba(255, 255, 255, 0.5);
 }
 
 /* Select de Filtros e Botão de Filtros */
-.custom-select-purple,
-.btn-purple-filter {
+.custom-select-purple, .btn-purple-filter {
     background-color: var(--color-purple-bg-transparent) !important;
     color: #DAB2FF !important;
     border: 1px solid transparent;
     border-radius: 0.5rem;
-    height: 100%; /* Alinha altura com a busca */
+    height: 100%;
     padding-top: 0.6rem;
     padding-bottom: 0.6rem;
 }
-
-.custom-select-purple:focus,
-.btn-purple-filter:hover {
+.custom-select-purple:focus, .btn-purple-filter:hover {
     background-color: var(--color-surface-hover) !important;
     color: white !important;
     border-color: var(--color-purple-light);
     box-shadow: none;
 }
 
-/* Ícone Chevron do Select (Recolorido para Lilás) */
-.custom-select-purple {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23DAB2FF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
-    background-position: right 0.75rem center;
-    background-size: 16px 12px;
-}
-
 /* Botões de Categoria (Pílulas) */
 .btn-category {
-    background-color: var(--color-header); /* Fundo escuro */
+    background-color: var(--color-header);
     color: var(--color-text-muted);
     border: 1px solid var(--color-header);
     font-weight: 500;
@@ -281,30 +224,15 @@ body {
     white-space: nowrap;
     transition: all 0.2s;
 }
-
 .btn-category:hover {
     background-color: var(--color-surface-hover);
     border-color: var(--color-surface-hover);
     color: white;
 }
-
 .btn-category.active {
     background-color: var(--color-purple-light) !important;
     border-color: var(--color-purple-light) !important;
     color: white !important;
-}
-
-/* Scrollbar personalizada (para categorias overflow) */
-.custom-scrollbar::-webkit-scrollbar {
-    height: 6px;
-}
-.custom-scrollbar::-webkit-scrollbar-track {
-    background: rgba(0,0,0,0.2);
-    border-radius: 3px;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb {
-    background: var(--color-purple-light);
-    border-radius: 3px;
 }
 
 /* Paginação */
@@ -315,10 +243,6 @@ body {
     margin: 0 3px;
     border-radius: 4px;
 }
-.custom-pagination .page-link:hover {
-    background-color: #374151;
-    color: white;
-}
 .custom-pagination .page-item.active .page-link {
     background-color: var(--color-purple-light);
     border-color: var(--color-purple-light);
@@ -326,40 +250,103 @@ body {
 }
 
 /* ========================================= */
-/* ===== 6. FOOTER ===== */
+/* ===== 6. ESTILOS DA CONTA (M. Conta) ===== */
 /* ========================================= */
-.main-footer {
-    background-color: var(--color-surface-card);
-    border-top: 1px solid var(--color-surface-hover);
+
+/* Inputs de Formulários de Conta/Configuração */
+.form-control-custom {
+    background-color: rgba(17, 24, 39, 0.6) !important;
+    border: 1px solid var(--border-transparent) !important;
+    color: white !important;
+    padding: 0.75rem 1rem;
+}
+.form-control-custom:focus {
+    background-color: rgba(17, 24, 39, 0.8) !important;
+    border-color: var(--color-purple-light) !important;
+    box-shadow: 0 0 0 0.25rem rgba(173, 70, 255, 0.25) !important;
 }
 
-.footer-link {
+/* --- Toggle Switch (Slider Animado) --- */
+.auth-slider-wrapper {
+    position: relative;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 50rem;
+    padding: 0.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+.auth-slider-label {
+    flex: 1;
+    text-align: center;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    z-index: 2;
+    font-weight: 600;
     color: var(--color-text-muted);
-    text-decoration: none;
-    transition: color 0.2s;
+    transition: color 0.3s ease;
+    user-select: none;
 }
+.slider-glider {
+    position: absolute;
+    top: 0.25rem;
+    left: 0.25rem;
+    height: calc(100% - 0.5rem);
+    width: calc(50% - 0.25rem);
+    background-color: var(--color-purple-light);
+    border-radius: 50rem;
+    transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    z-index: 1;
+    box-shadow: 0 2px 8px rgba(173, 70, 255, 0.4);
+}
+/* Lógica do movimento */
+#loginTabButton:checked ~ .slider-glider { transform: translateX(0%); }
+#loginTabButton:checked + label { color: #ffffff; }
+#registerTabButton:checked ~ .slider-glider { transform: translateX(100%); margin-left: 0.25rem; }
+#registerTabButton:checked + label { color: #ffffff; }
 
-.footer-link:hover {
+/* Sidebar de Navegação (Pills) */
+.nav-pills-custom .nav-link {
+    color: var(--color-text-muted);
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-radius: 0.5rem;
+}
+.nav-pills-custom .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.05);
     color: white;
 }
-
-/* ========================================= */
-/* ===== 7. ANIMAÇÕES E JS HELPERS ===== */
-/* ========================================= */
-
-/* Classes para o Scroll Reveal (Intersection Observer) */
-.hidden-element {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
+.nav-pills-custom .nav-link.active {
+    background-color: var(--color-purple-light) !important;
+    color: white !important;
+    box-shadow: 0 4px 10px rgba(173, 70, 255, 0.2);
+}
+.hover-danger:hover {
+    background-color: rgba(220, 53, 69, 0.1) !important;
+    color: #ef4444 !important;
 }
 
-.show-element {
-    opacity: 1;
-    transform: translateY(0);
+/* Histórico de Compras */
+.purchase-item {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-transparent);
+    transition: background-color 0.2s;
+}
+.purchase-item:hover {
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Delays para animações em cascata */
+/* ========================================= */
+/* ===== 7. JS HELPERS & FOOTER ===== */
+/* ========================================= */
+
+/* Animações (Scroll Reveal) */
+.hidden-element { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.show-element { opacity: 1; transform: translateY(0); }
 .delay-1 { transition-delay: 0.1s; }
 .delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
+
+/* Footer */
+.main-footer { background-color: var(--color-surface-card); border-top: 1px solid var(--color-surface-hover); }
+.footer-link { color: var(--color-text-muted); text-decoration: none; transition: color 0.2s; }
+.footer-link:hover { color: white; }

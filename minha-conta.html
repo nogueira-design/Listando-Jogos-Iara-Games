@@ -3,365 +3,312 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Área do Usuário</title>
-    <!-- CSS do Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Ícones do Bootstrap -->
+    <title>Minha Conta - Iara Games</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <style>
-        /* Ajustes para o tema escuro se assemelhar ao original */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        /* Botões de navegação da conta com estilo mais próximo do original */
-        .nav-pills .nav-link {
-            color: var(--bs-body-color);
-        }
-        
-        .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-            color: #fff;
-            background-color: #4f46e5; /* Cor indigo similar ao original */
-        }
-        
-        .nav-pills .nav-link:not(.active):hover {
-            background-color: var(--bs-tertiary-bg);
-        }
-
-        /* Botão Sair */
-        .btn-logout {
-            color: var(--bs-danger-text-emphasis);
-        }
-        .btn-logout:hover {
-            color: var(--bs-danger-text-emphasis);
-            background-color: var(--bs-tertiary-bg);
-        }
-
-        /* Botões de alternância Login/Registro */
-        .btn-group .btn-check:checked + .btn-outline-primary {
-            background-color: #4f46e5;
-            border-color: #4f46e5;
-            color: #fff;
-        }
-
-        .btn-group .btn-outline-primary {
-            color: var(--bs-body-color);
-            border-color: var(--bs-border-color);
-        }
-
-        .btn-group .btn-outline-primary:hover {
-            background-color: var(--bs-tertiary-bg);
-            border-color: var(--bs-border-color);
-            color: var(--bs-body-color);
-        }
-
-        /* Botão principal */
-        .btn-primary {
-            background-color: #4f46e5;
-            border-color: #4f46e5;
-        }
-        .btn-primary:hover {
-            background-color: #4338ca;
-            border-color: #4338ca;
-        }
-    </style>
-        <link rel="stylesheet" href="./CSS/styles.css">
+    
+    <link rel="stylesheet" href="./CSS/styles.css">
 </head>
+<body data-bs-theme="dark">
 
-<!-- Ativa o tema escuro do Bootstrap -->
-<body data-bs-theme="dark" class="bg-dark">
-    <header class="main-header">
-        <div class="container">
-            <a href="./index.html" class="logo">
-                <img src="./imagens/Logo Full.svg" alt="Iara Games Logo" class="logo-image">
+    <header class="main-header sticky-top">
+        <div class="container h-100 d-flex justify-content-between align-items-center">
+            <a href="./index.html" class="logo-link">
+                <img src="./imagens/Logo Full.svg" alt="Iara Games Logo" class="logo-img">
             </a>
-            <nav class="main-nav">
-                <a href="./index.html" class="nav-link">
+
+            <nav class="d-none d-md-flex gap-3 align-items-center">
+                <a href="./index.html" class="nav-link-custom">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                     Início
                 </a>
-                <a href="./loja.html" class="nav-link">
+                <a href="./loja.html" class="nav-link-custom">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
                     Loja
                 </a>
-                <a href="./biblioteca.html" class="nav-link">
+                <a href="./biblioteca.html" class="nav-link-custom">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
                     Biblioteca
                 </a>
-                <a href="./forum.html" class="nav-link">
+                <a href="./forum.html" class="nav-link-custom">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                     Fórum
                 </a>
-                <a href="./suporte.html" class="nav-link">
+                <a href="./suporte.html" class="nav-link-custom">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                     Suporte
                 </a>
             </nav>
-            <a href="./minha-conta.html" class="nav-link account-link">
+
+            <a href="./minha-conta.html" class="nav-link-custom d-none d-md-flex account-btn active">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                 Minha Conta
             </a>
+
+            <button class="btn btn-link text-white d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                <i class="bi bi-list fs-1"></i>
+            </button>
         </div>
     </header>
-    <main class="gradient-wrapper">
-        <div class="container py-5">
-        <h1 class="text-3xl font-bold text-white mb-5 text-center">
-            Área do Usuário
-        </h1>
 
-        <!-- Seção Logged Out (Login/Registro) -->
-        <div id="loggedOutView">
-            <div class="d-flex justify-content-center mb-4">
-                <div class="btn-group" role="group" aria-label="Alternar entre login e registro">
-                    <input type="radio" class="btn-check" name="authTab" id="loginTabButton" autocomplete="off" checked>
-                    <label class="btn btn-outline-primary" for="loginTabButton">Entrar</label>
-                  
-                    <input type="radio" class="btn-check" name="authTab" id="registerTabButton" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="registerTabButton">Criar Conta</label>
-                  </div>
-            </div>
-
-            <!-- Formulário de Login -->
-            <div id="loginFormContainer">
-                <div class="bg-body-tertiary p-4 p-md-5 rounded-3 shadow-lg mx-auto" style="max-width: 500px;">
-                    <h2 class="fs-2 fw-bold text-white mb-4 text-center">
-                        Entrar na sua conta
-                    </h2>
-                    <form>
-                        <div class="mb-3">
-                            <label for="loginEmail" class="form-label text-body-secondary">Email</label>
-                            <input type="email" class="form-control" id="loginEmail" placeholder="seu@email.com">
-                        </div>
-                        <div class="mb-3">
-                            <label for="loginPassword" class="form-label text-body-secondary">Senha</label>
-                            <input type="password" class="form-control" id="loginPassword" placeholder="********">
-                        </div>
-                        <div class="text-end mb-4">
-                            <a href="#" class="text-decoration-none" style="color: #818cf8;">Esqueceu a senha?</a>
-                        </div>
-                        <button type="button" id="loginButton" class="btn btn-primary w-100 py-2 fw-medium">
-                            Entrar
-                        </button>
-                        <div class="mt-4 text-center">
-                            <p class="text-body-secondary">
-                                Não tem uma conta? 
-                                <button type="button" id="showRegisterLink" class="btn btn-link text-decoration-none p-0" style="color: #818cf8;">
-                                    Criar conta
-                                </button>
-                            </p>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <main class="gradient-background min-vh-100 py-5">
+        <div class="container">
             
-            <!-- Formulário de Registro -->
-            <div id="registerFormContainer" style="display: none;">
-                <div class="bg-body-tertiary p-4 p-md-5 rounded-3 shadow-lg mx-auto" style="max-width: 500px;">
-                    <h2 class="fs-2 fw-bold text-white mb-4 text-center">
-                        Criar nova conta
-                    </h2>
-                    <form>
-                        <div class="mb-3">
-                            <label for="regUsername" class="form-label text-body-secondary">Nome de usuário</label>
-                            <input type="text" class="form-control" id="regUsername" placeholder="Seu nome de usuário">
-                        </div>
-                        <div class="mb-3">
-                            <label for="regEmail" class="form-label text-body-secondary">Email</label>
-                            <input type="email" class="form-control" id="regEmail" placeholder="seu@email.com">
-                        </div>
-                        <div class="mb-3">
-                            <label for="regPassword" class="form-label text-body-secondary">Senha</label>
-                            <input type="password" class="form-control" id="regPassword" placeholder="********">
-                        </div>
-                        <div class="mb-4">
-                            <label for="regConfirmPassword" class="form-label text-body-secondary">Confirmar Senha</label>
-                            <input type="password" class="form-control" id="regConfirmPassword" placeholder="********">
-                        </div>
-                        <button type="button" id="registerButton" class="btn btn-primary w-100 py-2 fw-medium">
-                            Criar Conta
-                        </button>
-                        <div class="mt-4 text-center">
-                            <p class="text-body-secondary">
-                                Já tem uma conta? 
-                                <button type="button" id="showLoginLink" class="btn btn-link text-decoration-none p-0" style="color: #818cf8;">
-                                    Entrar
-                                </button>
-                            </p>
-                        </div>
-                    </form>
-                </div>
+            <div class="text-center mb-5">
+                <h1 class="fw-bold text-white">Área do Usuário</h1>
             </div>
-        </div>
 
-        <!-- Seção Logged In (Configurações da Conta) -->
-        <div id="loggedInView" style="display: none;">
-            <div class="bg-body-tertiary p-4 p-md-5 rounded-3 shadow-lg mx-auto" style="max-width: 900px;">
-                <h2 class="fs-2 fw-bold text-white mb-4">
-                    Configurações da Conta
-                </h2>
-                <div class="row">
-                    <!-- Navegação da Conta -->
-                    <div class="col-md-4">
-                        <div class="nav nav-pills flex-column" id="account-tab" role="tablist" aria-orientation="vertical">
-                            <a class="nav-link active d-flex align-items-center" id="privacy-tab" data-bs-toggle="pill" href="#privacy" role="tab" aria-controls="privacy" aria-selected="true">
-                                <i class="bi bi-person-fill me-2"></i> Privacidade
-                            </a>
-                            <a class="nav-link d-flex align-items-center" id="security-tab" data-bs-toggle="pill" href="#security" role="tab" aria-controls="security" aria-selected="false">
-                                <i class="bi bi-lock-fill me-2"></i> Segurança
-                            </a>
-                            <a class="nav-link d-flex align-items-center" id="purchases-tab" data-bs-toggle="pill" href="#purchases" role="tab" aria-controls="purchases" aria-selected="false">
-                                <i class="bi bi-clock-history me-2"></i> Histórico de Compras
-                            </a>
-                            <button type="button" id="logoutButton" class="btn btn-logout d-flex align-items-center text-start mt-5">
-                                <i class="bi bi-box-arrow-right me-2"></i> Sair da Conta
-                            </button>
-                        </div>
-                    </div>
+            <div id="loggedOutView" class="row justify-content-center">
+                <div class="col-md-8 col-lg-5">
                     
-                    <!-- Conteúdo das Abas da Conta -->
-                    <div class="col-md-8">
-                        <div class="tab-content bg-body-secondary p-4 rounded-3" id="account-tabContent">
+                    <div class="auth-slider-wrapper mb-4">
+                        <input type="radio" class="btn-check" name="authTab" id="loginTabButton" autocomplete="off" checked>
+                        <label class="auth-slider-label" for="loginTabButton">Entrar</label>
+
+                        <input type="radio" class="btn-check" name="authTab" id="registerTabButton" autocomplete="off">
+                        <label class="auth-slider-label" for="registerTabButton">Criar Conta</label>
+
+                        <div class="slider-glider"></div>
+                    </div>
+
+                    <div class="card shadow-lg border-0 p-4">
+                        <div class="card-body">
                             
-                            <!-- Aba Privacidade -->
-                            <div class="tab-pane fade show active" id="privacy" role="tabpanel" aria-labelledby="privacy-tab">
-                                <h3 class="fs-4 fw-semibold text-white mb-4">Configurações de Privacidade</h3>
-                                <div class="vstack gap-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="checkPublicProfile">
-                                        <label class="form-check-label text-body-emphasis" for="checkPublicProfile">
-                                            Perfil público
-                                        </label>
-                                        <p class="text-body-secondary ms-4" style="font-size: 0.9rem;">
-                                            Permite que outros usuários vejam seu perfil e biblioteca de jogos
-                                        </p>
+                            <div id="loginFormContainer">
+                                <h3 class="text-center text-white fw-bold mb-4">Bem-vindo de volta</h3>
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="loginEmail" class="form-label text-secondary-light small">Email</label>
+                                        <input type="email" class="form-control form-control-custom" id="loginEmail" placeholder="seu@email.com">
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="checkOnlineStatus">
-                                        <label class="form-check-label text-body-emphasis" for="checkOnlineStatus">
-                                            Mostrar status online
-                                        </label>
-                                        <p class="text-body-secondary ms-4" style="font-size: 0.9rem;">
-                                            Mostra seu status online para amigos
-                                        </p>
+                                    <div class="mb-3">
+                                        <label for="loginPassword" class="form-label text-secondary-light small">Senha</label>
+                                        <input type="password" class="form-control form-control-custom" id="loginPassword" placeholder="********">
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="checkEmailNotifs">
-                                        <label class="form-check-label text-body-emphasis" for="checkEmailNotifs">
-                                            Receber notificações por email
-                                        </label>
-                                        <p class="text-body-secondary ms-4" style="font-size: 0.9rem;">
-                                            Receba emails sobre atualizações e promoções
-                                        </p>
+                                    <div class="text-end mb-4">
+                                        <a href="#" class="text-purple-light small text-decoration-none">Esqueceu a senha?</a>
                                     </div>
-                                </div>
-                                <button class="btn btn-primary mt-4">Salvar Alterações</button>
+                                    <button type="button" id="loginButton" class="btn btn-primary-custom w-100 py-2 rounded-pill">
+                                        Entrar
+                                    </button>
+                                </form>
                             </div>
 
-                            <!-- Aba Segurança -->
-                            <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
-                                <h3 class="fs-4 fw-semibold text-white mb-4">Segurança</h3>
-                                <div class="vstack gap-3">
-                                    <div>
-                                        <label class="form-label text-body-secondary">Alterar Senha</label>
-                                        <input type="password" placeholder="Senha atual" class="form-control bg-dark mb-2">
-                                        <input type="password" placeholder="Nova senha" class="form-control bg-dark mb-2">
-                                        <input type="password" placeholder="Confirmar nova senha" class="form-control bg-dark">
+                            <div id="registerFormContainer" style="display: none;">
+                                <h3 class="text-center text-white fw-bold mb-4">Crie sua conta</h3>
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="regUsername" class="form-label text-secondary-light small">Nome de usuário</label>
+                                        <input type="text" class="form-control form-control-custom" id="regUsername" placeholder="Como quer ser chamado?">
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="check2FA">
-                                        <label class="form-check-label text-body-emphasis" for="check2FA">
-                                            Ativar autenticação de dois fatores
-                                        </label>
-                                        <p class="text-body-secondary ms-4" style="font-size: 0.9rem;">
-                                            Aumenta a segurança da sua conta
-                                        </p>
+                                    <div class="mb-3">
+                                        <label for="regEmail" class="form-label text-secondary-light small">Email</label>
+                                        <input type="email" class="form-control form-control-custom" id="regEmail" placeholder="seu@email.com">
                                     </div>
-                                </div>
-                                <button class="btn btn-primary mt-4">Salvar Alterações</button>
+                                    <div class="mb-3">
+                                        <label for="regPassword" class="form-label text-secondary-light small">Senha</label>
+                                        <input type="password" class="form-control form-control-custom" id="regPassword" placeholder="********">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="regConfirmPassword" class="form-label text-secondary-light small">Confirmar Senha</label>
+                                        <input type="password" class="form-control form-control-custom" id="regConfirmPassword" placeholder="********">
+                                    </div>
+                                    <button type="button" id="registerButton" class="btn btn-primary-custom w-100 py-2 rounded-pill">
+                                        Cadastrar
+                                    </button>
+                                </form>
                             </div>
 
-                            <!-- Aba Histórico de Compras -->
-                            <div class="tab-pane fade" id="purchases" role="tabpanel" aria-labelledby="purchases-tab">
-                                <h3 class="fs-4 fw-semibold text-white mb-4">Histórico de Compras</h3>
-                                <div class="vstack gap-3">
-                                    <div class="bg-dark p-3 rounded-2">
-                                        <div class="d-flex justify-content-between align-items-center mb-1">
-                                            <h4 class="fw-medium text-white fs-6 mb-0">Celeste</h4>
-                                            <span class="text-body-secondary">R$ 36,99</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loggedInView" style="display: none;">
+                <div class="card border-0 bg-surface-card shadow-lg" style="min-height: 600px;">
+                    <div class="row g-0 h-100">
+                        
+                        <div class="col-md-4 border-end border-secondary border-opacity-25 p-4">
+                            <div class="text-center mb-5">
+                                <div class="icon-circle mx-auto mb-3" style="width: 64px; height: 64px;">
+                                    <i class="bi bi-person-fill fs-3 text-white"></i>
+                                </div>
+                                <h5 class="text-white fw-bold mb-0">Usuário</h5>
+                                <small class="text-secondary-light">usuario@exemplo.com</small>
+                            </div>
+
+                            <div class="nav flex-column nav-pills nav-pills-custom gap-2" id="account-tab" role="tablist" aria-orientation="vertical">
+                                <button class="nav-link active d-flex align-items-center px-3 py-3" id="privacy-tab" data-bs-toggle="pill" data-bs-target="#privacy" type="button" role="tab">
+                                    <i class="bi bi-shield-lock me-3 fs-5"></i> Privacidade
+                                </button>
+                                <button class="nav-link d-flex align-items-center px-3 py-3" id="security-tab" data-bs-toggle="pill" data-bs-target="#security" type="button" role="tab">
+                                    <i class="bi bi-key me-3 fs-5"></i> Segurança
+                                </button>
+                                <button class="nav-link d-flex align-items-center px-3 py-3" id="purchases-tab" data-bs-toggle="pill" data-bs-target="#purchases" type="button" role="tab">
+                                    <i class="bi bi-bag-check me-3 fs-5"></i> Histórico de Compras
+                                </button>
+                                
+                                <hr class="border-secondary border-opacity-25 my-3">
+                                
+                                <button type="button" id="logoutButton" class="nav-link d-flex align-items-center px-3 py-3 text-danger hover-danger">
+                                    <i class="bi bi-box-arrow-right me-3 fs-5"></i> Sair da Conta
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-8 p-4 p-lg-5">
+                            <div class="tab-content" id="account-tabContent">
+                                
+                                <div class="tab-pane fade show active" id="privacy" role="tabpanel">
+                                    <h3 class="fw-bold text-white mb-4">Privacidade</h3>
+                                    
+                                    <div class="vstack gap-4">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="checkPublicProfile" checked>
+                                            <label class="form-check-label text-white fw-medium" for="checkPublicProfile">Perfil Público</label>
+                                            <p class="text-secondary-light small mb-0">Permite que outros usuários vejam seus jogos e conquistas.</p>
                                         </div>
-                                        <p class="text-body-secondary mb-0" style="font-size: 0.9rem;">Data: 10/10/2023</p>
-                                        <p class="text-success-emphasis mb-0" style="font-size: 0.9rem;">Concluído</p>
+                                        
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="checkOnlineStatus">
+                                            <label class="form-check-label text-white fw-medium" for="checkOnlineStatus">Status Online</label>
+                                            <p class="text-secondary-light small mb-0">Mostra quando você está ativo na plataforma.</p>
+                                        </div>
+
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="checkEmailNotifs" checked>
+                                            <label class="form-check-label text-white fw-medium" for="checkEmailNotifs">Notificações por Email</label>
+                                            <p class="text-secondary-light small mb-0">Receba novidades sobre lançamentos e promoções.</p>
+                                        </div>
                                     </div>
-                                    <div class="bg-dark p-3 rounded-2">
-                                        <div class="d-flex justify-content-between align-items-center mb-1">
-                                            <h4 class="fw-medium text-white fs-6 mb-0">Dandara</h4>
-                                            <span class="text-body-secondary">R$ 36,99</span>
-                                        </div>
-                                        <p class="text-body-secondary mb-0" style="font-size: 0.9rem;">Data: 05/09/2023</p>
-                                        <p class="text-success-emphasis mb-0" style="font-size: 0.9rem;">Concluído</p>
-                                    </div>
-                                    <div class="bg-dark p-3 rounded-2">
-                                        <div class="d-flex justify-content-between align-items-center mb-1">
-                                            <h4 class="fw-medium text-white fs-6 mb-0">Horizon Chase Turbo</h4>
-                                            <span class="text-body-secondary">R$ 29,99</span>
-                                        </div>
-                                        <p class="text-body-secondary mb-0" style="font-size: 0.9rem;">Data: 22/08/2023</p>
-                                        <p class="text-success-emphasis mb-0" style="font-size: 0.9rem;">Concluído</p>
+
+                                    <div class="mt-5">
+                                        <button class="btn btn-primary-custom px-4 rounded-pill">Salvar Alterações</button>
                                     </div>
                                 </div>
+
+                                <div class="tab-pane fade" id="security" role="tabpanel">
+                                    <h3 class="fw-bold text-white mb-4">Segurança</h3>
+                                    
+                                    <div class="mb-4">
+                                        <h5 class="text-white mb-3">Alterar Senha</h5>
+                                        <div class="row g-3">
+                                            <div class="col-12">
+                                                <input type="password" class="form-control form-control-custom" placeholder="Senha atual">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="password" class="form-control form-control-custom" placeholder="Nova senha">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="password" class="form-control form-control-custom" placeholder="Confirmar nova senha">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="border-secondary border-opacity-25 my-4">
+
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="check2FA">
+                                        <label class="form-check-label text-white fw-medium" for="check2FA">Autenticação de Dois Fatores (2FA)</label>
+                                        <p class="text-secondary-light small mb-0">Adiciona uma camada extra de segurança à sua conta.</p>
+                                    </div>
+
+                                    <div class="mt-5">
+                                        <button class="btn btn-primary-custom px-4 rounded-pill">Atualizar Segurança</button>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="purchases" role="tabpanel">
+                                    <h3 class="fw-bold text-white mb-4">Histórico de Compras</h3>
+                                    
+                                    <div class="vstack gap-3">
+                                        <div class="purchase-item p-3 rounded-3 d-flex align-items-center">
+                                            <div class="flex-grow-1">
+                                                <h6 class="text-white fw-bold mb-1">Celeste</h6>
+                                                <small class="text-secondary-light">10/10/2023</small>
+                                            </div>
+                                            <div class="text-end">
+                                                <div class="text-white fw-bold">R$ 36,99</div>
+                                                <small class="text-success">Concluído</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="purchase-item p-3 rounded-3 d-flex align-items-center">
+                                            <div class="flex-grow-1">
+                                                <h6 class="text-white fw-bold mb-1">Dandara</h6>
+                                                <small class="text-secondary-light">05/09/2023</small>
+                                            </div>
+                                            <div class="text-end">
+                                                <div class="text-white fw-bold">R$ 36,99</div>
+                                                <small class="text-success">Concluído</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="purchase-item p-3 rounded-3 d-flex align-items-center">
+                                            <div class="flex-grow-1">
+                                                <h6 class="text-white fw-bold mb-1">Horizon Chase Turbo</h6>
+                                                <small class="text-secondary-light">22/08/2023</small>
+                                            </div>
+                                            <div class="text-end">
+                                                <div class="text-white fw-bold">R$ 29,99</div>
+                                                <small class="text-success">Concluído</small>
+                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+
         </div>
     </main>
-    <footer class="main-footer-refactored">
+
+    <footer class="main-footer py-5">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h3 class="footer-title" style="color: var(--color-accent);">IARA GAMES</h3>
-                    <p class="footer-text">Plataforma dedicada exclusivamente a jogos desenvolvidos por estúdios brasileiros. Apoie o talento nacional e mergulhe em experiências únicas.</p>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-3 text-warning">IARA GAMES</h5>
+                    <p class="text-secondary-light small">Plataforma dedicada exclusivamente a jogos desenvolvidos por estúdios brasileiros. Apoie o talento nacional.</p>
                 </div>
-
-                <div class="footer-column">
-                    <h3 class="footer-title">Links Rápidos</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="./index2.html" class="footer-link">Início</a></li>
-                        <li><a href="./loja.html" class="footer-link">Loja</a></li>
-                        <li><a href="./biblioteca.html" class="footer-link">Biblioteca</a></li>
-                        <li><a href="./forum.html" class="footer-link">Fórum</a></li>
-                        <li><a href="./suporte.html" class="footer-link">Suporte</a></li>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold text-white mb-3">Links Rápidos</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="./index.html" class="footer-link">Início</a></li>
+                        <li class="mb-2"><a href="./loja.html" class="footer-link">Loja</a></li>
+                        <li class="mb-2"><a href="./biblioteca.html" class="footer-link">Biblioteca</a></li>
+                        <li class="mb-2"><a href="./forum.html" class="footer-link">Fórum</a></li>
+                        <li class="mb-2"><a href="./suporte.html" class="footer-link">Suporte</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-column">
-                    <h3 class="footer-title">Suporte</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="./suporte.html" class="footer-link">FAQ</a></li>
-                        <li><a href="./suporte.html" class="footer-link">Contato</a></li>
-                        <li><a href="./suporte.html" class="footer-link">Tickets de Suporte</a></li>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-bold text-white mb-3">Suporte</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#" class="footer-link">FAQ</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Contato</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Tickets de Suporte</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-column">
-                    <h3 class="footer-title">Legal</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="#" class="footer-link">Termos de Uso</a></li>
-                        <li><a href="#" class="footer-link">Política de Privacidade</a></li>
+                <div class="col-lg-3 col-md-6">
+                     <h6 class="fw-bold text-white mb-3">Legal</h6>
+                     <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#" class="footer-link">Termos de Uso</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Privacidade</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-copyright">
-                <p>&copy; 2025 Iara Games. Todos os direitos reservados.</p>
+            <div class="row mt-4 pt-3 border-top border-secondary border-opacity-25">
+                <div class="col-12 text-center text-secondary-light small">
+                    &copy; 2025 Iara Games. Todos os direitos reservados.
+                </div>
             </div>
         </div>
     </footer>
-    <!-- JS do Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <!-- Nosso JavaScript customizado -->
-    <script src="/js/auth-script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/auth-script.js" defer></script>
 </body>
 </html>
